@@ -183,10 +183,12 @@
         <span id="photoCount"></span>
         <button id="closeLightbox" aria-label="사진 닫기">닫기 ×</button>
       </div>
-      <img class="modal-image" id="largePhoto" alt="">
-      <div class="modal-nav">
-        <button id="previousPhoto">← 이전</button>
-        <button id="nextPhoto">다음 →</button>
+      <div class="lightbox-stage" id="lightboxStage">
+        <img class="modal-image" id="largePhoto" alt="">
+        <button class="photo-half photo-half-left" id="previousPhoto"
+                type="button" aria-label="이전 사진"></button>
+        <button class="photo-half photo-half-right" id="nextPhoto"
+                type="button" aria-label="다음 사진"></button>
       </div>
     </dialog>
 
