@@ -1,11 +1,8 @@
 /* style.css — 화면 전체와 각 구역의 디자인
- * 내용 수정: js/config.js / 팝업 디자인: popup.css / 움직임: effects.css
- */
+ * 내용 수정: js/config.js / 팝업 디자인: popup.css / 움직임: effects.css */
 
 
-/* 01. 공통 색상과 글꼴
- * 전체 분위기를 바꾸려면 이 색상부터 수정하세요. var(--pink)는 아래 --pink 값을 사용합니다.
- */
+/* 01. 공통 색상과 글꼴 : 전체 분위기를 바꾸려면 이 색상부터 수정하세요. var(--pink)는 아래 --pink 값을 사용합니다.*/
 
 :root {
   --ink: #625653;
@@ -16,9 +13,7 @@
   --serif: 'Noto Serif KR', 'Batang', serif;
 }
 
-/* 02. 기본 설정
- * box-sizing은 테두리와 여백을 포함하여 너비를 계산하도록 합니다.
- */
+/* 02. 기본 설정 : box-sizing은 테두리와 여백을 포함하여 너비를 계산하도록 합니다. */
 
 * {
   box-sizing: border-box;
@@ -79,7 +74,7 @@ section {
 /* 04. 여러 구역에서 함께 쓰는 제목과 글자 : eyebrow는 WEDDING INVITATION처럼 작은 영문 제목에 쓰입니다. */
 
 .eyebrow {
-  font: 10px Georgia,serif;
+  font: 11px Georgia,serif;
   letter-spacing: 2px;
   color: var(--muted);
   margin: 0 0 22px;
