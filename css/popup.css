@@ -3,9 +3,7 @@
  * style.css 다음에 읽도록 index.html에서 연결합니다.
  */
 
-/* 01. 팝업 공통 외형
- * HTML의 <dialog>는 기본적으로 닫혀 있고, JavaScript에서 showModal()로 엽니다.
- */
+/* 01. 팝업 공통 외형 : HTML의 <dialog>는 기본적으로 닫혀 있고, JavaScript에서 showModal()로 엽니다. */
 
 dialog {
   border: 0;
@@ -17,16 +15,13 @@ dialog {
   color: var(--ink);
 }
 
-/* 팝업 뒤의 어두운 배경입니다. 배경을 눌러 닫는 동작은 main.js에서 처리합니다.
- */
+/* 팝업 뒤의 어두운 배경입니다. 배경을 눌러 닫는 동작은 main.js에서 처리합니다. */
 
 dialog::backdrop {
   background: #302425d9;
 }
 
-/* 02. 사진 확대 팝업
- * 사진은 원래 비율을 유지하고 화면 높이를 넘지 않도록 표시합니다.
- */
+/* 02. 사진 확대 팝업 : 사진은 원래 비율을 유지하고 화면 높이를 넘지 않도록 표시합니다. */
 
 .modal-top {
   display: flex;
@@ -44,8 +39,7 @@ dialog::backdrop {
 
 .modal-image {
   display: block;
-  width: 100%;
-  max-height: 72vh;
+  width: 100%; max-height: 72vh;
   object-fit: contain;
 }
 
@@ -55,27 +49,21 @@ dialog::backdrop {
   margin-top: 14px;
 }
 
-/* 03. 잠깐 나타나는 안내 메시지
- * 주소 복사 등의 결과를 화면 아래에 보여 줍니다.
- */
+/* 03. 잠깐 나타나는 안내 메시지 : 주소 복사 등의 결과를 화면 아래에 보여 줍니다. */
 
 .toast {
-  position: fixed;
-  bottom: 25px;
-  left: 50%;
+  position: fixed; bottom: 25px; left: 50%;
   transform: translateX(-50%);
   background: #625653;
   color: #fff;
   font-size: 12px;
   padding: 12px 22px;
   border-radius: 30px;
-  z-index: 5;
-  max-width: 90%;
+  z-index: 5; max-width: 90%;
   text-align: center;
 }
 
-/* hidden 속성이 있으면 다른 display 설정과 관계없이 숨깁니다.
- */
+/* hidden 속성이 있으면 다른 display 설정과 관계없이 숨깁니다. */
 
 .toast[hidden],[hidden] {
   display: none!important;
