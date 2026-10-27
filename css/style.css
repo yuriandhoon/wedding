@@ -363,22 +363,13 @@ p {
   margin-bottom: 8px;
 }
 
-.map-placeholder {
-  height: 180px;
-  border: 1px solid var(--line);
-  display: grid;
-  place-content: center;
-  background: #f7efef;
+.map-illustration {
+  display: block;
+  width: 100%;
+  height: auto;
   margin: 28px 0 18px;
-  color: #9e8787;
-  font-size: 12px;
-  gap: 8px;
-}
-
-.map-placeholder b {
-  font-family: var(--serif);
-  font-weight: 400;
-  font-size: 19px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
 }
 
 .maplinks {
