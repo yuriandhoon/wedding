@@ -1,12 +1,10 @@
-/*
- * popup.css — 사진 확대창, 계좌 팝업, 안내 메시지
+/* popup.css — 사진 확대창, 계좌 팝업, 안내 메시지
  * 팝업을 여닫는 기능: js/main.js / 계좌 내용과 복사 기능: js/accounts.js
  * style.css 다음에 읽도록 index.html에서 연결합니다.
  */
 
 
-/*
- * 01. 팝업 공통 외형
+/* 01. 팝업 공통 외형
  * HTML의 <dialog>는 기본적으로 닫혀 있고, JavaScript에서 showModal()로 엽니다.
  */
 
@@ -20,16 +18,14 @@ dialog {
   color: var(--ink);
 }
 
-/*
- * 팝업 뒤의 어두운 배경입니다. 배경을 눌러 닫는 동작은 main.js에서 처리합니다.
+/* 팝업 뒤의 어두운 배경입니다. 배경을 눌러 닫는 동작은 main.js에서 처리합니다.
  */
 
 dialog::backdrop {
   background: #302425d9;
 }
 
-/*
- * 02. 사진 확대 팝업
+/* 02. 사진 확대 팝업
  * 사진은 원래 비율을 유지하고 화면 높이를 넘지 않도록 표시합니다.
  */
 
@@ -60,8 +56,7 @@ dialog::backdrop {
   margin-top: 14px;
 }
 
-/*
- * 03. 잠깐 나타나는 안내 메시지
+/* 03. 잠깐 나타나는 안내 메시지
  * 주소 복사 등의 결과를 화면 아래에 보여 줍니다.
  */
 
@@ -80,16 +75,14 @@ dialog::backdrop {
   text-align: center;
 }
 
-/*
- * hidden 속성이 있으면 다른 display 설정과 관계없이 숨깁니다.
+/* hidden 속성이 있으면 다른 display 설정과 관계없이 숨깁니다.
  */
 
 .toast[hidden],[hidden] {
   display: none!important;
 }
 
-/*
- * 04. 계좌 팝업: 봉투와 편지지 모양
+/* 04. 계좌 팝업: 봉투와 편지지 모양
  * 전체 너비, 둥근 모서리, 종이 배경색을 이곳에서 수정합니다.
  * 85vh는 이전 브라우저용이며, 지원되는 브라우저는 85dvh를 사용합니다.
  */
@@ -112,9 +105,7 @@ dialog::backdrop {
   backdrop-filter: blur(5px);
 }
 
-/*
- * 팝업을 열 때만 짧게 등장합니다. 움직임 줄이기 설정은 effects.css에서 반영합니다.
- */
+/* 팝업을 열 때만 짧게 등장합니다. 움직임 줄이기 설정은 effects.css에서 반영합니다.*/
 
 .account-dialog[open] {
   animation: dialog-appear .25s ease-out;
@@ -131,9 +122,7 @@ dialog::backdrop {
   }
 }
 
-/*
- * 05. 계좌 팝업 위쪽: 봉투 색상, 닫기 버튼, 하트 장식
- */
+/* 05. 계좌 팝업 위쪽: 봉투 색상, 닫기 버튼, 하트 장식 */
 
 .account-dialog-header {
   position: relative;
@@ -142,8 +131,7 @@ dialog::backdrop {
   border-bottom: 1px solid #ecdde0;
 }
 
-/*
- * 작은 사각형을 45도로 돌려 봉투 끝의 삼각 장식을 만듭니다.
+/* 작은 사각형을 45도로 돌려 봉투 끝의 삼각 장식을 만듭니다.
  */
 
 .account-dialog-header::after {
@@ -201,8 +189,7 @@ dialog::backdrop {
   letter-spacing: 1px;
 }
 
-/*
- * 06. 계좌 팝업 본문: 관계, 예금주, 은행, 계좌번호
+/* 06. 계좌 팝업 본문: 관계, 예금주, 은행, 계좌번호
  */
 
 .account-dialog-body {
@@ -237,8 +224,7 @@ dialog::backdrop {
   margin: 0 0 6px;
 }
 
-/*
- * 번호가 길면 상자 밖으로 넘치지 않게 줄바꿈하며, 직접 선택해서 복사할 수도 있습니다.
+/* 번호가 길면 상자 밖으로 넘치지 않게 줄바꿈하며, 직접 선택해서 복사할 수도 있습니다.
  */
 
 .account-dialog .popup-number {
@@ -251,8 +237,7 @@ dialog::backdrop {
   line-height: 1.6;
 }
 
-/*
- * 번호가 비어 있을 때 표시하는 “계좌 준비 중”의 글자 모양입니다.
+/* 번호가 비어 있을 때 표시하는 “계좌 준비 중”의 글자 모양입니다.
  */
 
 .account-dialog .popup-number.is-empty {
@@ -288,8 +273,7 @@ dialog::backdrop {
   background: #a56d80;
 }
 
-/*
- * 계좌번호가 없을 때는 복사 버튼을 비활성화합니다.
+/* 계좌번호가 없을 때는 복사 버튼을 비활성화합니다.
  */
 
 .account-dialog .copy-account:disabled {
@@ -306,8 +290,7 @@ dialog::backdrop {
   stroke-width: 1.6;
 }
 
-/*
- * 08. 복사 결과와 감사 인사
+/* 08. 복사 결과와 감사 인사
  * min-height로 결과 문구가 생겨도 팝업 높이가 크게 흔들리지 않게 합니다.
  */
 
