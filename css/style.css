@@ -449,52 +449,6 @@ p {
   color: var(--muted);
 }
 
-.tabs {
-  display: flex;
-  background: #f3dfe6;
-  border-radius: 30px;
-  padding: 4px;
-  width: 190px;
-  margin: 30px auto 20px;
-}
-
-.tabs button {
-  border: 0;
-  background: transparent;
-  flex: 1;
-  border-radius: 24px;
-  padding: 7px;
-  font-size: 12px;
-}
-
-/* 선택된 탭만 흰색 배경으로 표시합니다. 선택 상태는 accounts.js에서 바꿉니다.
- */
-
-.tabs button[aria-selected=true] {
-  background: white;
-}
-
-.account-card {
-  background: #fff;
-  padding: 22px 18px;
-  border-radius: 12px;
-  margin: 12px 0;
-}
-
-.account-card p {
-  font-size: 13px;
-  margin: 0 0 12px;
-}
-
-.account-card .outline {
-  border-radius: 30px;
-}
-
-.account-card .holder {
-  font-family: var(--serif);
-  font-size: 17px;
-}
-
 /*
  * 12. 마지막 감사 인사와 공유 버튼
  */
@@ -558,14 +512,6 @@ p {
 /* 양쪽 버튼은 고정 너비, 가운데 순서 안내는 남은 너비를 사용합니다.
  */
 
-.account-nav {
-  display: grid;
-  grid-template-columns: 44px 1fr 44px;
-  align-items: center;
-  gap: 10px;
-  margin: 20px 0 4px;
-}
-
 .account-arrow {
   width: 42px;
   height: 42px;
@@ -582,17 +528,6 @@ p {
   color: var(--muted);
   margin: 0;
 }
-
-.account-card .account-role {
-  font-size: 11px;
-  color: var(--muted);
-  margin-bottom: 6px;
-}
-
-.account-card .holder {
-  margin-bottom: 20px;
-}
-
 
 /* 신랑측·신부측 접이식 계좌 목록 */
 .account-group {
