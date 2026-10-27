@@ -198,37 +198,6 @@
       </div>
     </dialog>
 
-    <!-- 계좌 상세 팝업: 계좌 보기를 눌렀을 때만 정보가 들어갑니다. -->
-    <dialog id="accountDialog" class="account-dialog" aria-labelledby="accountDialogTitle">
-      <div class="account-dialog-header">
-        <button class="dialog-close" id="closeAccountDialog" aria-label="계좌 팝업 닫기" autofocus>×</button>
-        <div class="account-seal" aria-hidden="true">♡</div>
-        <p class="eyebrow">WITH YOUR BLESSING</p>
-        <h2 id="accountDialogTitle">마음을 전하실 곳</h2>
-      </div>
-      <!-- 빈 텍스트 영역은 계좌 보기 클릭 시 채우고, 닫을 때 다시 비웁니다. -->
-      <div class="account-dialog-body">
-        <p class="popup-role" id="popupRole"></p>
-        <p class="popup-holder" id="popupHolder"></p>
-        <div class="account-details">
-          <p class="popup-bank" id="popupBank"></p>
-          <p class="popup-number" id="popupNumber"></p>
-        </div>
-        <!-- 복사 아이콘과 버튼 문구. 번호가 없는 경우 accounts.js가 비활성화합니다. -->
-        <button class="copy-account" id="copyAccountNumber">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <rect x="8" y="8" width="12" height="13" rx="2"></rect>
-            <path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h3"></path>
-          </svg>
-          <span id="copyAccountLabel">계좌번호 복사하기</span>
-        </button>
-        <p class="copy-status" id="accountCopyStatus" role="status" aria-live="polite"></p>
-        <p class="account-thanks">
-          전해 주시는 따뜻한 마음,<br>소중히 간직하겠습니다.
-        </p>
-      </div>
-    </dialog>
-
     <!-- 복사 등의 결과를 잠깐 보여 주는 공통 안내 메시지입니다. -->
     <div class="toast" id="toast" role="status" hidden></div>
   </body>
