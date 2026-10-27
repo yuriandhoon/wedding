@@ -29,8 +29,8 @@
 
   // 꽃잎의 가로 위치(%)와 시작 시간(초)입니다. 항목 수가 꽃잎 수입니다.
   // 음수 delay는 페이지를 열 때 이미 중간에서 떨어지고 있는 것처럼 보이게 합니다.
-  const petalPositions = [10, 80, 55, 30];
-  const petalDelays = [-3, -8, -13, -6];
+  const petalPositions = [10, 86, 64, 40, 22, 32];
+  const petalDelays = [-3, -8, -13, -6, -11, -1, -9];
   petalPositions.forEach((left, index) => {
     const leaf = document.createElement('i');
     leaf.className = 'petal';
