@@ -10,74 +10,85 @@
   // main.js에서 만든 공통 도구를 가져옵니다.
   const { $, createPhoto, openDialog } = Wedding;
 
-  // expanded: 사진을 모두 펼쳤는지 / currentPhoto: 현재 확대 중인 사진의 순서
-  // 순서는 0부터 시작하므로 첫 사진은 0입니다.
-  let expanded = false;
   let currentPhoto = 0;
-
-  // 사진 목록을 화면에 다시 그립니다. 실제 사진 경로는 CONFIG.photos에 있습니다.
+  
+  // 큰 사진과 선택된 썸네일을 함께 갱신합니다.
+  function showPhoto() {
+    const src = CONFIG.photos[currentPhoto];
+  
+    $('galleryMain').src = src;
+    $('galleryMain').alt = `웨딩 사진 ${currentPhoto + 1}`;
+  
+    // 기존 확대 팝업에서도 같은 사진을 보여 줍니다.
+    $('largePhoto').src = src;
+    $('largePhoto').alt = `웨딩 사진 ${currentPhoto + 1}`;
+    $('photoCount').textContent =
+      `${currentPhoto + 1} / ${CONFIG.photos.length}`;
+  
+    const strip = $('gallery');
+    const buttons = strip.querySelectorAll('.thumb');
+  
+    buttons.forEach((button, index) => {
+      button.setAttribute('aria-current', index === currentPhoto);
+    });
+  
+    // 선택된 썸네일이 가로 목록 안에서 보이도록 이동합니다.
+    const selected = buttons[currentPhoto];
+    if (selected) {
+      const distance =
+        selected.getBoundingClientRect().left -
+        strip.getBoundingClientRect().left -
+        (strip.clientWidth - selected.clientWidth) / 2;
+  
+      strip.scrollBy({ left: distance, behavior: 'smooth' });
+    }
+  }
+  
+  // config.js의 사진을 전부 썸네일로 만듭니다.
   function renderGallery() {
-    const grid = $('gallery');
-    grid.replaceChildren();
-
-    // 사진 목록을 비워 두면 클릭할 수 없는 빈 자리 9개를 보여 줍니다.
+    const strip = $('gallery');
+    strip.replaceChildren();
+  
     if (!CONFIG.photos.length) {
-      for (let index = 1; index <= 9; index++) {
-        const cell = document.createElement('div');
-        cell.className = 'thumb';
-        cell.textContent = String(index).padStart(2, '0');
-        cell.setAttribute('aria-label', `사진 ${index} 자리`);
-        grid.append(cell);
-      }
+      $('galleryMain').hidden = true;
+      $('galleryHint').textContent = '사진을 준비 중입니다.';
       return;
     }
-
-    $('galleryHint').textContent = '사진을 누르면 크게 볼 수 있습니다.';
-    // 처음에는 최대 9장만 보여 주고, 더 보기를 누르면 전체를 보여 줍니다.
-    const photos = CONFIG.photos.slice(0, expanded ? undefined : 9);
-
-    photos.forEach((src, index) => {
+  
+    $('galleryHint').textContent = '작은 사진을 선택하거나 큰 사진을 눌러 보세요.';
+  
+    CONFIG.photos.forEach((src, index) => {
       const button = document.createElement('button');
+      button.type = 'button';
       button.className = 'thumb';
-      button.setAttribute('aria-label', `사진 ${index + 1} 크게 보기`);
-      const image = createPhoto(src, `웨딩 사진 ${index + 1}`);
-      // 사진 경로가 틀린 경우 깨진 이미지 대신 안내를 보여 주고 해당 버튼을 막습니다.
+      button.setAttribute('aria-label', `웨딩 사진 ${index + 1} 보기`);
+  
+      const image = createPhoto(src, '');
       image.onerror = () => {
         button.textContent = '사진 확인 필요';
         button.disabled = true;
       };
+  
       button.append(image);
-      // 누른 사진의 순서를 기억한 뒤, main.js의 공통 도구로 확대창을 엽니다.
       button.onclick = () => {
         currentPhoto = index;
         showPhoto();
-        openDialog($('lightbox'));
       };
-      grid.append(button);
+      strip.append(button);
     });
-
-    $('morePhotos').hidden = CONFIG.photos.length <= 9;
-    $('morePhotos').textContent = expanded ? '사진 접기' : '사진 더 보기';
+  
+    showPhoto();
   }
-
-  function showPhoto() {
-    $('largePhoto').src = CONFIG.photos[currentPhoto];
-    $('largePhoto').alt = `웨딩 사진 ${currentPhoto + 1}`;
-    $('photoCount').textContent = `${currentPhoto + 1} / ${CONFIG.photos.length}`;
-  }
-
+  
   // %는 나머지 연산입니다. 마지막 사진 다음에는 첫 사진, 첫 사진 이전에는 마지막 사진으로 이동합니다.
   function movePhoto(direction) {
     currentPhoto = (currentPhoto + direction + CONFIG.photos.length) % CONFIG.photos.length;
     showPhoto();
   }
-
+  
+  $('galleryMain').onclick = () => openDialog($('lightbox'));
+  
   // 아래부터는 index.html의 각 버튼과 실제 동작을 연결합니다.
-  $('morePhotos').onclick = () => {
-    expanded = !expanded;
-    // 펼침 상태에 맞춰 목록을 다시 그립니다.
-    renderGallery();
-  };
   $('closeLightbox').onclick = () => $('lightbox').close();
   $('previousPhoto').onclick = () => movePhoto(-1);
   $('nextPhoto').onclick = () => movePhoto(1);
