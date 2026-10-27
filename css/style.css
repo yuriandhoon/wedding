@@ -14,7 +14,7 @@
   --pink: #dc97aa;
   --pale: #fcf3f6;
   --line: #eadbdd;
-  --serif: 'Noto Serif KR','Batang','바탕',Georgia,serif;
+  --serif: 'Noto Serif KR', 'Batang', serif;
 }
 
 /* 02. 기본 설정
@@ -29,7 +29,7 @@ body {
   margin: 0;
   background: #f0eae8;
   color: var(--ink);
-  font-family: -apple-system,BlinkMacSystemFont,'Malgun Gothic',sans-serif;
+  font-family: 'Noto Sans KR', 'Malgun Gothic', sans-serif;
   font-size: 14px;
   font-weight: 400;
   line-height: 1.9;
