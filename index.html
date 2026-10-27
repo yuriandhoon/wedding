@@ -38,8 +38,7 @@
     -->
     <main>
 
-      <!-- 01. 첫 화면
-           대표 사진·이름·예식 일시. 사진 경로와 이름은 config.js에서 수정합니다. -->
+      <!-- 01. 첫 화면: 대표 사진·이름·예식 일시. 사진 경로와 이름은 config.js에서 수정 -->
       <section class="hero">
         <!-- 꽃잎은 이 첫 구역 안에만 생성됩니다. -->
         <div class="petals" id="petals" aria-hidden="true"></div>
@@ -61,8 +60,7 @@
         <p class="caption" data-bind="venue.name">예식장 이름 · 홀 입력</p>
       </section>
 
-      <!-- 02. 초대글
-           본문은 config.js의 invitation에 적습니다. 줄바꿈도 그대로 반영됩니다. -->
+      <!-- 02. 초대글 : 본문은 config.js의 invitation에 적습니다. -->
       <section class="invitation">
         <p class="eyebrow">INVITATION</p>
         <h2>우리 결혼합니다!</h2>
@@ -75,8 +73,7 @@
         </p>
       </section>
 
-      <!-- 03. 예식 날짜
-           아래 숫자는 main.js가 자동으로 채웁니다. dateISO만 수정하세요. -->
+      <!-- 03. 예식 날짜 : 숫자는 main.js가 자동으로 채웁니다. -->
       <section class="date pink">
         <div class="date-display">
           <span id="year">YEAR</span>
@@ -104,8 +101,7 @@
         </div>
       </section>
 
-      <!-- 04. 가족 소개
-           동일한 data-bind가 여러 곳에 있어도 설정 한 곳에서 함께 바뀝니다. -->
+      <!-- 04. 가족 소개 : 동일한 data-bind가 여러 곳에 있어도 설정 한 곳에서 함께 바뀝니다. -->
       <section class="family">
         <p class="eyebrow">WITH OUR FAMILIES</p>
         <p class="role">GROOM</p>
@@ -119,8 +115,7 @@
         <p class="parents" data-bind="bride.parents"></p>
       </section>
 
-      <!-- 05. 사진 갤러리
-           gallery.js가 config.js의 photos 목록으로 사진 버튼을 만듭니다. -->
+      <!-- 05. 사진 갤러리 : gallery.js가 config.js의 photos 목록으로 사진 버튼을 만듭니다. -->
       <section class="gallery">
         <p class="eyebrow">GALLERY</p>
         <h2>우리의 이야기</h2>
@@ -130,8 +125,7 @@
         <button class="outline" id="morePhotos" hidden>사진 더 보기</button>
       </section>
 
-      <!-- 06. 오시는 길
-           예식장·교통 안내는 config.js의 venue에서 수정합니다. -->
+      <!-- 06. 오시는 길 : 예식장·교통 안내는 config.js의 venue에서 수정합니다. -->
       <section class="location pink">
         <p class="eyebrow">LOCATION</p>
         <h2>오시는 길</h2>
@@ -156,8 +150,7 @@
         </div>
       </section>
 
-      <!-- 07. 마음 전하실 곳
-           accounts.js가 선택한 측의 사람들만 좌우로 순회하도록 합니다. -->
+      <!-- 07. 마음 전하실 곳 : accounts.js가 선택한 측의 사람들만 좌우로 순회하도록 합니다. -->
       <section class="account pink">
         <p class="eyebrow">ACCOUNT</p>
         <h2>마음 전하실 곳</h2>
@@ -178,8 +171,7 @@
         <div id="accounts" role="tabpanel" aria-labelledby="tabGroom"></div>
       </section>
 
-      <!-- 08. 감사 인사 
-           아래 인사말은 HTML에서 직접 바꾸세요. 공유 버튼은 main.js와 연결됩니다. -->
+      <!-- 08. 감사 인사 : 아래 인사말은 HTML에서 직접 바꾸세요. 공유 버튼은 main.js와 연결됩니다. -->
       <section class="closing">
         <p class="eyebrow">THANK YOU</p>
         <h2>우리의 시작을 함께해 주세요</h2>
