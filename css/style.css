@@ -1,0 +1,608 @@
+/*
+ * style.css — 화면 전체와 각 구역의 디자인
+ * 내용 수정: js/config.js / 팝업 디자인: popup.css / 움직임: effects.css
+ * 각 번호는 아래 디자인 묶음의 목차입니다. Ctrl+F로 구역 이름을 찾으세요.
+ */
+
+
+/*
+ * 01. 공통 색상과 글꼴
+ * 전체 분위기를 바꾸려면 이 색상부터 수정하세요. var(--pink)는 아래 --pink 값을 사용합니다.
+ */
+
+:root {
+  --ink: #625653;
+  --muted: #9f8b88;
+  --pink: #dc97aa;
+  --pale: #fcf3f6;
+  --line: #eadbdd;
+  --serif: 'Noto Serif KR','Batang','바탕',Georgia,serif;
+}
+
+/*
+ * 02. 기본 설정
+ * box-sizing은 테두리와 여백을 포함하여 너비를 계산하도록 합니다.
+ */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #f0eae8;
+  color: var(--ink);
+  font-family: -apple-system,BlinkMacSystemFont,'Malgun Gothic',sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.9;
+}
+
+button,a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: default;
+  color: #ab9897;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button:focus-visible,a:focus-visible {
+  outline: 2px solid #b2687e;
+  outline-offset: 4px;
+}
+
+/*
+ * 03. 페이지의 폭과 구역 간격
+ * 큰 모니터에서도 청첩장은 최대 440px로 표시합니다.
+ * section의 padding은 구역 안쪽의 위아래 / 좌우 여백입니다.
+ */
+
+main {
+  max-width: 440px;
+  margin: auto;
+  background: #fff;
+  overflow: hidden;
+  box-shadow: 0 0 80px #99847a0a;
+}
+
+section {
+  position: relative;
+  padding: 82px 30px;
+  text-align: center;
+}
+
+/*
+ * 04. 여러 구역에서 함께 쓰는 제목과 글자
+ * eyebrow는 WEDDING INVITATION처럼 작은 영문 제목에 쓰입니다.
+ */
+
+.eyebrow {
+  font: 10px Georgia,serif;
+  letter-spacing: 2px;
+  color: var(--muted);
+  margin: 0 0 22px;
+}
+
+.serif,h1,h2,h3 {
+  font-family: var(--serif);
+  font-weight: 400;
+}
+
+h2 {
+  font-size: 21px;
+  margin: 0 0 30px;
+  letter-spacing: 1px;
+}
+
+p {
+  margin: 0 0 14px;
+}
+
+/*
+ * 05. 첫 화면: 이름과 대표 사진
+ * 사진의 모서리 모양은 .cover의 border-radius에서 바꿀 수 있습니다.
+ * 벚꽃의 위치와 움직임은 effects.css에서 관리합니다.
+ */
+
+.hero {
+  padding: 44px 22px 60px;
+}
+
+.hero h1 {
+  font-size: 34px;
+  letter-spacing: 7px;
+  line-height: 1.55;
+  margin: 20px 0 30px;
+}
+
+.amp {
+  display: block;
+  color: var(--pink);
+  font: italic 26px Georgia,serif;
+  letter-spacing: 0;
+}
+
+.cover {
+  aspect-ratio: 4/5;
+  border-radius: 120px 120px 10px 10px;
+  overflow: hidden;
+  position: relative;
+  background: #f6eee9;
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  inset: 0;
+}
+
+.photo-empty {
+  color: #a48b80;
+  line-height: 2.3;
+  font-family: var(--serif);
+  font-size: 16px;
+}
+
+.photo-empty .frame-label {
+  display: block;
+  font: 10px Georgia,serif;
+  letter-spacing: 3px;
+  margin-bottom: 16px;
+}
+
+.flower {
+  display: block;
+  font: 48px Georgia,serif;
+  color: #cfa89f;
+  margin-bottom: 20px;
+}
+
+.caption {
+  font-family: var(--serif);
+  font-size: 15px;
+}
+
+.small {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/*
+ * 06. 초대글
+ * white-space: pre-line은 config.js의 줄바꿈을 화면에도 반영합니다.
+ */
+
+.invitation {
+  padding-top: 70px;
+  padding-bottom: 90px;
+}
+
+.invitation .verse {
+  line-height: 2.4;
+  white-space: pre-line;
+  font-family: var(--serif);
+  font-size: 15px;
+}
+
+.signature {
+  margin-top: 35px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/*
+ * 07. 연분홍 배경과 예식 날짜
+ * HTML에 class="pink"가 붙은 구역은 같은 배경색을 사용합니다.
+ */
+
+.pink {
+  background: var(--pale);
+}
+
+.date {
+  padding-top: 65px;
+  padding-bottom: 65px;
+}
+
+.date-display {
+  color: var(--pink);
+  font-family: Georgia,serif;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 12px;
+}
+
+.date-display strong {
+  font-size: 54px;
+  font-weight: 400;
+}
+
+.date-display span {
+  font-size: 13px;
+  letter-spacing: 1px;
+}
+
+.date-sub {
+  font-size: 12px;
+  color: #b78d99;
+  margin: 10px 0 30px;
+}
+
+/*
+ * 카운트다운: 날짜 / 시 / 분 / 초를 같은 너비의 네 칸으로 표시합니다.
+ */
+
+.countdown {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  margin: 0 8px;
+}
+
+.time:not(:last-child) {
+  border-right: 1px solid var(--line);
+}
+
+.time b {
+  display: block;
+  font: 30px Georgia,serif;
+}
+
+.time small {
+  font: 8px Georgia,serif;
+  letter-spacing: 1.5px;
+  color: var(--muted);
+}
+
+/*
+ * 08. 가족 소개: 신랑, 신부, 부모님 성함
+ */
+
+.family .role {
+  font: 11px Georgia,serif;
+  letter-spacing: 3px;
+  color: #bc94a0;
+}
+
+.family h3 {
+  font-size: 25px;
+  margin: 12px 0 3px;
+}
+
+.english {
+  font: italic 14px Georgia,serif;
+  color: var(--muted);
+  letter-spacing: 1px;
+}
+
+.parents {
+  margin: 18px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.divider {
+  width: 1px;
+  height: 40px;
+  background: var(--line);
+  margin: 40px auto;
+}
+
+/*
+ * 09. 사진 갤러리
+ * repeat(3, 1fr)는 같은 너비의 열 세 개입니다. gap은 사진 사이 간격입니다.
+ */
+
+.gallery {
+  padding: 20px 22px 80px;
+}
+
+.gallery h2 {
+  margin-bottom: 10px;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 5px;
+  margin: 25px 0 14px;
+}
+
+.thumb {
+  aspect-ratio: 1;
+  border: 0;
+  padding: 0;
+  background: #f5efeb;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font: italic 18px Georgia,serif;
+  color: #bdaba2;
+}
+
+.thumb:nth-child(3n+2) {
+  background: #eee9e2;
+}
+
+.thumb:nth-child(3n) {
+  background: #f7e9eb;
+}
+
+.thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/*
+ * 공통 테두리 버튼: 사진 더 보기, 주소 복사, 계좌 보기 등에 사용합니다.
+ */
+
+.outline {
+  display: block;
+  width: 100%;
+  padding: 10px 15px;
+  background: transparent;
+  border: 1px solid var(--line);
+  font-size: 12px;
+}
+
+/*
+ * 10. 오시는 길
+ * map-placeholder는 위치 안내 상자이고, 실제 지도는 지도 버튼으로 엽니다.
+ */
+
+.venue {
+  font-family: var(--serif);
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.map-placeholder {
+  height: 180px;
+  border: 1px solid var(--line);
+  display: grid;
+  place-content: center;
+  background: #f7efef;
+  margin: 28px 0 18px;
+  color: #9e8787;
+  font-size: 12px;
+  gap: 8px;
+}
+
+.map-placeholder b {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: 19px;
+}
+
+.maplinks {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 7px;
+  margin-bottom: 22px;
+}
+
+.maplinks a {
+  font-size: 11px;
+  background: #fff;
+  border: 1px solid var(--line);
+  padding: 10px 2px;
+  border-radius: 3px;
+}
+
+/*
+ * 대중교통과 주차 안내는 왼쪽 정렬로 읽기 쉽게 표시합니다.
+ */
+
+.transport {
+  text-align: left;
+  margin-top: 30px;
+  border-top: 1px solid var(--line);
+}
+
+.transport article {
+  padding: 24px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.transport h3 {
+  font-family: inherit;
+  font-size: 13px;
+  margin: 0 0 10px;
+}
+
+.transport p {
+  font-size: 12px;
+  line-height: 1.9;
+  white-space: pre-line;
+  margin: 0;
+  color: #8a7674;
+}
+
+/*
+ * 11. 마음 전하실 곳: 탭과 계좌 카드
+ * 번호가 나오는 팝업 디자인은 popup.css에 따로 있습니다.
+ */
+
+.account {
+  padding-top: 55px;
+}
+
+.account h2 {
+  margin-bottom: 18px;
+}
+
+.account .intro {
+  font-size: 12px;
+  line-height: 2;
+  color: var(--muted);
+}
+
+.tabs {
+  display: flex;
+  background: #f3dfe6;
+  border-radius: 30px;
+  padding: 4px;
+  width: 190px;
+  margin: 30px auto 20px;
+}
+
+.tabs button {
+  border: 0;
+  background: transparent;
+  flex: 1;
+  border-radius: 24px;
+  padding: 7px;
+  font-size: 12px;
+}
+
+/*
+ * 선택된 탭만 흰색 배경으로 표시합니다. 선택 상태는 accounts.js에서 바꿉니다.
+ */
+
+.tabs button[aria-selected=true] {
+  background: white;
+}
+
+.account-card {
+  background: #fff;
+  padding: 22px 18px;
+  border-radius: 12px;
+  margin: 12px 0;
+}
+
+.account-card p {
+  font-size: 13px;
+  margin: 0 0 12px;
+}
+
+.account-card .outline {
+  border-radius: 30px;
+}
+
+.account-card .holder {
+  font-family: var(--serif);
+  font-size: 17px;
+}
+
+/*
+ * 12. 마지막 감사 인사와 공유 버튼
+ */
+
+.closing {
+  padding: 65px 28px;
+  background: #e7a9ba;
+  color: #fff;
+}
+
+.closing .eyebrow {
+  color: #fff;
+  opacity: .8;
+}
+
+.closing h2 {
+  font-size: 23px;
+  margin-bottom: 22px;
+}
+
+.closing p {
+  font-family: var(--serif);
+  font-size: 13px;
+  line-height: 2.2;
+}
+
+.share {
+  margin: 26px auto 0;
+  width: auto;
+  border-color: #f3d3dc;
+  color: #fff;
+  padding: 10px 30px;
+  border-radius: 30px;
+}
+
+/*
+ * 13. 작은 휴대폰 화면
+ * 화면 너비가 350px 이하이면 좌우 여백과 큰 글자 크기를 줄입니다.
+ */
+
+@media(max-width:350px) {
+  section {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .date-display strong {
+    font-size: 44px;
+  }
+  .hero h1 {
+    font-size: 30px;
+  }
+}
+
+/*
+ * 14. 주소의 줄바꿈과 계좌 이동 버튼
+ * 주소 문자열의 \n도 줄바꿈으로 표시합니다.
+ */
+
+[data-bind="venue.address"] {
+  white-space: pre-line;
+}
+
+/*
+ * 양쪽 버튼은 고정 너비, 가운데 순서 안내는 남은 너비를 사용합니다.
+ */
+
+.account-nav {
+  display: grid;
+  grid-template-columns: 44px 1fr 44px;
+  align-items: center;
+  gap: 10px;
+  margin: 20px 0 4px;
+}
+
+.account-arrow {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  background: #fff;
+  color: #ad7386;
+  font-size: 22px;
+  line-height: 1;
+}
+
+.account-position {
+  font-size: 12px;
+  color: var(--muted);
+  margin: 0;
+}
+
+.account-card .account-role {
+  font-size: 11px;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+
+.account-card .holder {
+  margin-bottom: 20px;
+}

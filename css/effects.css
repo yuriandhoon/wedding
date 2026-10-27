@@ -1,0 +1,148 @@
+/*
+ * effects.css — 벚꽃과 등장 애니메이션
+ * 움직임을 시작하고 관리하는 코드: js/effects.js
+ * 이 파일을 CSS 중 마지막에 읽어 움직임 줄이기 설정이 우선 적용되게 합니다.
+ */
+
+
+/*
+ * 01. 벚꽃이 보이는 범위
+ * hero 안에 벚꽃을 가두므로 첫 구역을 벗어나면 꽃잎이 보이지 않습니다.
+ */
+
+.hero {
+  overflow: hidden;
+  isolation: isolate;
+}
+
+/*
+ * position: absolute는 첫 구역을 기준으로 합니다. fixed로 바꾸면 전체 화면을 따라오게 됩니다.
+ * pointer-events: none은 꽃잎이 사진이나 버튼 클릭을 가로막지 않도록 합니다.
+ */
+
+.petals {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 4;
+}
+
+/*
+ * 02. 꽃잎 하나의 크기와 낙하
+ * --left, --size, --duration 등의 값은 js/effects.js에서 넣습니다.
+ */
+
+.petal {
+  position: absolute;
+  top: -30px;
+  left: var(--left);
+  width: var(--size);
+  height: calc(var(--size)*1.5);
+  animation: petal-fall var(--duration) linear infinite;
+  animation-delay: var(--delay);
+  will-change: transform;
+}
+
+.petal::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 80% 10% 80% 20%;
+  background: linear-gradient(125deg,#f6d9e3,#e6a7bd);
+  opacity: .6;
+  animation: petal-sway var(--sway) ease-in-out infinite alternate;
+}
+
+/*
+ * 꽃잎의 낙하 거리 --petal-distance는 첫 구역의 실제 높이에 맞춰 계산합니다.
+ */
+
+@keyframes petal-fall {
+  from {
+    transform: translate3d(0,-30px,0) rotate(0);
+  }
+  to {
+    transform: translate3d(var(--drift),var(--petal-distance,1000px),0) rotate(var(--turn));
+  }
+}
+
+/*
+ * 낙하하는 동안 좌우로 조금 흔들립니다.
+ */
+
+@keyframes petal-sway {
+  from {
+    transform: translateX(-12px) rotateY(0);
+  }
+  to {
+    transform: translateX(12px) rotateY(55deg);
+  }
+}
+
+/*
+ * 03. 구역 내용이 처음 화면에 들어올 때의 등장 효과
+ * JS가 실행될 때만 reveal을 붙입니다. JS가 꺼져 있어도 내용은 읽을 수 있습니다.
+ * 24px는 떠오르는 거리, .85s는 걸리는 시간입니다.
+ */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity .85s ease,transform .85s cubic-bezier(.2,.65,.3,1);
+}
+
+/*
+ * 한 번 표시되면 이 상태를 유지합니다. 재등장 여부는 js/effects.js에서 결정합니다.
+ */
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/*
+ * 04. 계좌를 넘길 때 새 카드가 짧게 나타나는 효과
+ */
+
+.account-card {
+  animation: account-appear .35s ease;
+}
+
+@keyframes account-appear {
+  from {
+    opacity: 0;
+    transform: translateX(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/*
+ * 05. 휴대폰이나 컴퓨터의 “동작 줄이기” 설정 존중
+ * 이 설정을 켠 방문자에게는 꽃잎과 등장 동작을 생략하고 내용을 바로 보여 줍니다.
+ */
+
+@media(prefers-reduced-motion:reduce) {
+  .petal {
+    animation: none;
+    display: none;
+  }
+}
+
+@media(prefers-reduced-motion:reduce) {
+  .petals {
+    display: none;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .account-card,.account-dialog[open] {
+    animation: none;
+  }
+}
