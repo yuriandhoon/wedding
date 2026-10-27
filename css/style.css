@@ -430,10 +430,7 @@ p {
   color: #8a7674;
 }
 
-/*
- * 11. 마음 전하실 곳: 탭과 계좌 카드
- * 번호가 나오는 팝업 디자인은 popup.css에 따로 있습니다.
- */
+/* 11. 마음 전하실 곳: 탭과 계좌 카드 */
 
 .account {
   padding-top: 55px;
@@ -501,32 +498,10 @@ p {
   }
 }
 
-/* 14. 주소의 줄바꿈과 계좌 이동 버튼
- * 주소 문자열의 \n도 줄바꿈으로 표시합니다.
- */
+/* 14. 주소의 줄바꿈과 계좌 이동 버튼 : 주소 문자열의 \n도 줄바꿈으로 표시합니다. */
 
 [data-bind="venue.address"] {
   white-space: pre-line;
-}
-
-/* 양쪽 버튼은 고정 너비, 가운데 순서 안내는 남은 너비를 사용합니다.
- */
-
-.account-arrow {
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
-  border: 1px solid var(--line);
-  background: #fff;
-  color: #ad7386;
-  font-size: 22px;
-  line-height: 1;
-}
-
-.account-position {
-  font-size: 12px;
-  color: var(--muted);
-  margin: 0;
 }
 
 /* 신랑측·신부측 접이식 계좌 목록 */
