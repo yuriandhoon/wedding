@@ -2,796 +2,40 @@
 <html lang="ko">
   <head>
     <meta charset="utf-8">
-    <meta name="robots" content="noindex, nofollow, noarchive, noimageindex" />
-    <meta name="googlebot" content="noindex, nofollow, noarchive, noimageindex" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#fcf4f6">
     <meta name="description" content="우리 결혼합니다!">
     <title>최지훈 & 정유리 결혼합니다</title>
-    <style>
-      :root {
-        --ink: #625653; --muted: #9f8b88;
-        --pink: #dc97aa; --pale: #fcf3f6; --line: #eadbdd;
-        --serif: 'Noto Serif KR','Batang','바탕',Georgia,serif;
-      }
-
-      * {
-        box-sizing: border-box;
-      }
-
-      body {
-        margin: 0;
-        background: #f0eae8;
-        color: var(--ink);
-        font-family: -apple-system,BlinkMacSystemFont,'Malgun Gothic',sans-serif;
-        font-size: 14px; font-weight: 400;
-        line-height: 1.9;
-      }
-
-      button,a {
-        -webkit-tap-highlight-color: transparent;
-      }
-
-      button {
-        font: inherit; color: inherit;
-        cursor: pointer;
-      }
-
-      button:disabled {
-        cursor: default;
-        color: #ab9897;
-      }
-
-      a {
-        color: inherit;
-        text-decoration: none;
-      }
-
-      button:focus-visible,a:focus-visible {
-        outline: 2px solid #b2687e;
-        outline-offset: 4px;
-      }
-
-      main {
-        max-width: 440px; margin: auto;
-        background: #fff; overflow: hidden;
-        box-shadow: 0 0 80px #99847a0a;
-      }
-
-      section {
-        position: relative;
-        padding: 82px 30px;
-        text-align: center;
-      }
-
-      .eyebrow {
-        font: 10px Georgia,serif;
-        letter-spacing: 2px;
-        color: var(--muted);
-        margin: 0 0 22px;
-      }
-
-      .serif,h1,h2,h3 {
-        font-family: var(--serif); font-weight: 400;
-      }
-
-      h2 {
-        font-size: 21px; margin: 0 0 30px;
-        letter-spacing: 1px;
-      }
-
-      p {
-        margin: 0 0 14px;
-      }
-
-      .hero {
-        padding: 44px 22px 60px;
-      }
-
-      .hero h1 {
-        font-size: 34px; letter-spacing: 7px;
-        line-height: 1.55; margin: 20px 0 30px;
-      }
-
-      .amp {
-        display: block;
-        color: var(--pink);
-        font: italic 26px Georgia,serif;
-        letter-spacing: 0;
-      }
-
-      .cover {
-        aspect-ratio: 4/5;
-        border-radius: 120px 120px 10px 10px;
-        overflow: hidden;
-        position: relative;
-        background: #f6eee9;
-        margin-bottom: 30px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      .cover img {
-        width: 100%; height: 100%;
-        object-fit: cover;
-        position: absolute;
-        inset: 0;
-      }
-
-      .photo-empty {
-        color: #a48b80;
-        line-height: 2.3;
-        font-family: var(--serif);
-        font-size: 16px;
-      }
-
-      .photo-empty .frame-label {
-        display: block;
-        font: 10px Georgia,serif;
-        letter-spacing: 3px; margin-bottom: 16px;
-      }
-
-      .flower {
-        display: block;
-        font: 48px Georgia,serif;
-        color: #cfa89f;
-        margin-bottom: 20px;
-      }
-
-      .caption {
-        font-family: var(--serif); font-size: 15px;
-      }
-
-      .small {
-        font-size: 12px; color: var(--muted);
-      }
-
-      .invitation {
-        padding-top: 70px; padding-bottom: 90px;
-      }
-
-      .invitation .verse {
-        line-height: 2.4;
-        white-space: pre-line;
-        font-family: var(--serif);
-        font-size: 15px;
-      }
-
-      .signature {
-        margin-top: 35px; font-size: 12px;
-        color: var(--muted);
-      }
-
-      .pink {
-        background: var(--pale);
-      }
-
-      .date {
-        padding-top: 65px; padding-bottom: 65px;
-      }
-
-      .date-display {
-        color: var(--pink);
-        font-family: Georgia,serif;
-        display: flex;
-        align-items: baseline;
-        justify-content: center;
-        gap: 12px;
-      }
-
-      .date-display strong {
-        font-size: 54px; font-weight: 400;
-      }
-
-      .date-display span {
-        font-size: 13px;
-        letter-spacing: 1px;
-      }
-
-      .date-sub {
-        font-size: 12px; color: #b78d99;
-        margin: 10px 0 30px;
-      }
-
-      .countdown {
-        display: grid;
-        grid-template-columns: repeat(4,1fr);
-        margin: 0 8px;
-      }
-
-      .time:not(:last-child) {
-        border-right: 1px solid var(--line);
-      }
-
-      .time b {
-        display: block;
-        font: 30px Georgia,serif;
-      }
-
-      .time small {
-        font: 8px Georgia,serif;
-        letter-spacing: 1.5px;
-        color: var(--muted);
-      }
-
-      .family .role {
-        font: 11px Georgia,serif;
-        letter-spacing: 3px;
-        color: #bc94a0;
-      }
-
-      .family h3 {
-        font-size: 25px;
-        margin: 12px 0 3px;
-      }
-
-      .english {
-        font: italic 14px Georgia,serif;
-        color: var(--muted);
-        letter-spacing: 1px;
-      }
-
-      .parents {
-        margin: 18px 0 0;
-        color: var(--muted);
-        font-size: 13px;
-      }
-
-      .divider {
-        width: 1px; height: 40px;
-        background: var(--line);
-        margin: 40px auto;
-      }
-
-      .gallery {
-        padding: 20px 22px 80px;
-      }
-
-      .gallery h2 {
-        margin-bottom: 10px;
-      }
-
-      .gallery-grid {
-        display: grid;
-        grid-template-columns: repeat(3,1fr);
-        gap: 5px; margin: 25px 0 14px;
-      }
-
-      .thumb {
-        aspect-ratio: 1;
-        border: 0; padding: 0; background: #f5efeb;
-        position: relative;
-        overflow: hidden;
-        display: flex; align-items: center;
-        justify-content: center;
-        font: italic 18px Georgia,serif;
-        color: #bdaba2;
-      }
-
-      .thumb:nth-child(3n+2) {
-        background: #eee9e2;
-      }
-
-      .thumb:nth-child(3n) {
-        background: #f7e9eb;
-      }
-
-      .thumb img {
-        width: 100%; height: 100%;
-        object-fit: cover;
-      }
-
-      .outline {
-        display: block;
-        width: 100%; padding: 10px 15px; font-size: 12px;
-        background: transparent; 
-        border: 1px solid var(--line);
-      }
-
-      .venue {
-        font-family: var(--serif); font-size: 18px;
-        margin-bottom: 8px;
-      }
-
-      .map-placeholder {
-        height: 180px; border: 1px solid var(--line);
-        display: grid;
-        place-content: center;
-        background: #f7efef;
-        margin: 28px 0 18px;
-        color: #9e8787;
-        font-size: 12px; gap: 8px;
-      }
-
-      .map-placeholder b {
-        font-family: var(--serif); 
-        font-weight: 400; font-size: 19px;
-      }
-
-      .maplinks {
-        display: grid;
-        grid-template-columns: repeat(3,1fr);
-        gap: 7px;
-        margin-bottom: 22px;
-      }
-
-      .maplinks a {
-        font-size: 11px;
-        background: #fff;
-        border: 1px solid var(--line);
-        padding: 10px 2px; border-radius: 3px;
-      }
-
-      .transport {
-        text-align: left;
-        margin-top: 30px; border-top: 1px solid var(--line);
-      }
-
-      .transport article {
-        padding: 24px 0;
-        border-bottom: 1px solid var(--line);
-      }
-
-      .transport h3 {
-        font-family: inherit;
-        font-size: 13px; margin: 0 0 10px;
-      }
-
-      .transport p {
-        font-size: 12px; line-height: 1.9;
-        white-space: pre-line; margin: 0;
-        color: #8a7674;
-      }
-
-      .account {
-        padding-top: 55px;
-      }
-
-      .account h2 {
-        margin-bottom: 18px;
-      }
-
-      .account .intro {
-        font-size: 12px;
-        line-height: 2;
-        color: var(--muted);
-      }
-
-      .tabs {
-        display: flex; background: #f3dfe6;
-        border-radius: 30px; padding: 4px;
-        width: 190px; margin: 30px auto 20px;
-      }
-
-      .tabs button {
-        border: 0; background: transparent; flex: 1;
-        border-radius: 24px; padding: 7px; font-size: 12px;
-      }
-
-      .tabs button[aria-selected=true] {
-        background: white;
-      }
-
-      .account-card {
-        background: #fff;
-        padding: 22px 18px; border-radius: 12px; margin: 12px 0;
-      }
-
-      .account-card p {
-        font-size: 13px;
-        margin: 0 0 12px;
-      }
-
-      .account-card .outline {
-        border-radius: 30px;
-      }
-
-      .account-card .holder {
-        font-family: var(--serif);
-        font-size: 17px;
-      }
-
-      .closing {
-        padding: 65px 28px;
-        background: #e7a9ba;
-        color: #fff;
-      }
-
-      .closing .eyebrow {
-        color: #fff;
-        opacity: .8;
-      }
-
-      .closing h2 {
-        font-size: 23px; margin-bottom: 22px;
-      }
-
-      .closing p {
-        font-family: var(--serif);
-        font-size: 13px;
-        line-height: 2.2;
-      }
-
-      .share {
-        margin: 26px auto 0;
-        width: auto;
-        border-color: #f3d3dc;
-        color: #fff;
-        padding: 10px 30px; border-radius: 30px;
-      }
-
-      dialog {
-        border: 0;
-        background: #fff;
-        border-radius: 12px;
-        padding: 16px;
-        width: calc(100% - 32px);
-        max-width: 560px;
-        color: var(--ink);
-      }
-
-      dialog::backdrop {
-        background: #302425d9;
-      }
-
-      .modal-top {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 12px;
-      }
-
-      .modal-top button,.modal-nav button {
-        border: 1px solid var(--line);
-        background: white;
-        padding: 5px 18px;
-        border-radius: 20px;
-      }
-
-      .modal-image {
-        display: block;
-        width: 100%; max-height: 72vh;
-        object-fit: contain;
-      }
-
-      .modal-nav {
-        display: flex;
-        justify-content: space-between;
-        margin-top: 14px;
-      }
-
-      .toast {
-        position: fixed;
-        bottom: 25px; left: 50%;
-        transform: translateX(-50%);
-        background: #625653;
-        color: #fff;
-        font-size: 12px; padding: 12px 22px;
-        border-radius: 30px; z-index: 5; max-width: 90%;
-        text-align: center;
-      }
-
-      .toast[hidden],[hidden] {
-        display: none!important;
-      }
-
-      @media(prefers-reduced-motion:reduce) {
-        .petal {
-          animation: none;
-          display: none;
-        }
-      }
-
-      @media(max-width:350px) {
-        section {
-          padding-left: 20px;
-          padding-right: 20px;
-        }
-        .date-display strong {
-          font-size: 44px;
-        }
-        .hero h1 {
-          font-size: 30px;
-        }
-      }
-
-      /* 벚꽃잎: 첫 화면(hero) 안에서만 표시됩니다. */
-      .hero {
-        overflow: hidden;
-        isolation: isolate;
-      }
-
-      .petals {
-        position: absolute;
-        inset: 0;
-        overflow: hidden;
-        pointer-events: none;
-        z-index: 4;
-      }
-
-      .petal {
-        position: absolute;
-        top: -30px; left: var(--left); width: var(--size);
-        height: calc(var(--size)*1.5);
-        animation: petal-fall var(--duration) linear infinite;
-        animation-delay: var(--delay);
-        will-change: transform;
-      }
-
-      .petal::before {
-        content: "";
-        display: block;
-        width: 100%; height: 100%;
-        border-radius: 80% 10% 80% 20%;
-        background: linear-gradient(125deg,#f6d9e3,#e6a7bd);
-        opacity: .6;
-        animation: petal-sway var(--sway) ease-in-out infinite alternate;
-      }
-
-      @keyframes petal-fall {
-        from {
-          transform: translate3d(0,-30px,0) rotate(0);
-        }
-        to {
-          transform: translate3d(var(--drift),var(--petal-distance,1000px),0) rotate(var(--turn));
-        }
-      }
-
-      @keyframes petal-sway {
-        from {
-          transform: translateX(-12px) rotateY(0);
-        }
-        to {
-          transform: translateX(12px) rotateY(55deg);
-        }
-      }
-
-      /* 화면에 들어올 때 아래에서 부드럽게 등장. JS 미실행 시 원래대로 표시. */
-      .reveal {
-        opacity: 0;
-        transform: translateY(24px);
-        transition: opacity .85s ease,transform .85s cubic-bezier(.2,.65,.3,1);
-      }
-
-      .reveal.is-visible {
-        opacity: 1;
-        transform: translateY(0);
-      }
-
-      [data-bind="venue.address"] {
-        white-space: pre-line;
-      }
-
-      .account-nav {
-        display: grid;
-        grid-template-columns: 44px 1fr 44px;
-        align-items: center;
-        gap: 10px; margin: 20px 0 4px;
-      }
-
-      .account-arrow {
-        width: 42px; height: 42px;
-        border-radius: 50%; border: 1px solid var(--line);
-        background: #fff;
-        color: #ad7386;
-        font-size: 22px; line-height: 1;
-      }
-
-      .account-position {
-        font-size: 12px;
-        color: var(--muted);
-        margin: 0;
-      }
-
-      .account-card .account-role {
-        font-size: 11px;
-        color: var(--muted);
-        margin-bottom: 6px;
-      }
-
-      .account-card .holder {
-        margin-bottom: 20px;
-      }
-
-      .account-card {
-        animation: account-appear .35s ease;
-      }
-
-      @keyframes account-appear {
-        from {
-          opacity: 0;
-          transform: translateX(8px);
-        }
-        to {
-          opacity: 1;
-          transform: translateX(0);
-        }
-      }
-
-      /* 계좌 팝업: 봉투와 편지지를 닮은 연분홍 카드 */
-      .account-dialog {
-        max-width: 366px; padding: 0;
-        text-align: center;
-        border: 1px solid #eedde0; border-radius: 24px;
-        max-height: 85vh; max-height: 85dvh;
-        overflow: auto; background: #fffcfa;
-        box-shadow: 0 24px 90px #3d1d2940;
-      }
-
-      .account-dialog::backdrop {
-        background: #3c2d3594;
-        backdrop-filter: blur(5px);
-      }
-
-      .account-dialog[open] {
-        animation: dialog-appear .25s ease-out;
-      }
-
-      @keyframes dialog-appear {
-        from {
-          opacity: 0;
-          transform: translateY(12px) scale(.98);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0) scale(1);
-        }
-      }
-
-      .account-dialog-header {
-        position: relative;
-        padding: 32px 24px 22px;
-        background: linear-gradient(160deg,#fcebf0,#f8f0e9);
-        border-bottom: 1px solid #ecdde0;
-      }
-
-      .account-dialog-header::after {
-        content: "";
-        position: absolute;
-        left: 50%; bottom: -9px; width: 16px; height: 16px;
-        background: #faf0ed;
-        border-right: 1px solid #ecdde0; border-bottom: 1px solid #ecdde0;
-        transform: translateX(-50%) rotate(45deg);
-      }
-
-      .account-dialog .dialog-close {
-        position: absolute;
-        right: 12px; top: 12px; width: 36px; height: 36px;
-        display: grid;
-        place-items: center;
-        border: 0; border-radius: 50%;
-        background: #ffffffa6;
-        color: #9a727e;
-        font-size: 24px; line-height: 1;
-      }
-
-      .account-seal {
-        width: 46px; height: 46px;
-        margin: 0 auto 13px;
-        border: 1px solid #deb9c5; border-radius: 50%;
-        outline: 4px solid #ffffff70;
-        display: grid;
-        place-items: center;
-        color: #bd7f94;
-        font: 28px Georgia,serif;
-      }
-
-      .account-dialog .eyebrow {
-        font-size: 9px; letter-spacing: 2.5px;
-        color: #a47a87;
-        margin-bottom: 10px;
-      }
-
-      .account-dialog h2 {
-        font-size: 21px; margin: 0; letter-spacing: 1px;
-      }
-
-      .account-dialog-body {
-        padding: 30px 25px 20px;
-      }
-
-      .account-dialog .popup-role {
-        font-size: 11px; letter-spacing: 1px;
-        color: #a17d88; margin: 0 0 5px;
-      }
-
-      .account-dialog .popup-holder {
-        font-family: var(--serif);
-        font-size: 24px;
-        margin: 0 0 22px;
-        letter-spacing: 2px;
-      }
-
-      .account-details {
-        border: 1px solid #eadde0;
-        border-radius: 12px; background: #fff; padding: 18px 12px; margin-bottom: 20px;
-      }
-
-      .account-dialog .popup-bank {
-        font-size: 12px;
-        color: #9b8189;
-        margin: 0 0 6px;
-      }
-
-      .account-dialog .popup-number {
-        font: 22px Georgia,serif;
-        font-variant-numeric: tabular-nums;
-        letter-spacing: .6px;
-        overflow-wrap: anywhere;
-        margin: 0;
-        user-select: text;
-        line-height: 1.6;
-      }
-
-      .account-dialog .popup-number.is-empty {
-        font-family: inherit;
-        font-size: 14px;
-        letter-spacing: 0;
-        color: var(--muted);
-      }
-
-      .account-dialog .copy-account {
-        display: flex;
-        align-items: center; justify-content: center;
-        gap: 9px;  border: 0; border-radius: 12px;
-        background: #b67c8f;
-        width: 100%;
-        padding: 14px 10px;
-        font: inherit; font-size: 13px; color: white;
-        box-shadow: 0 4px 12px #b67c8f20;
-        transition: background .2s;
-      }
-
-      .account-dialog .copy-account:hover:not(:disabled) {
-        background: #a56d80;
-      }
-
-      .account-dialog .copy-account:disabled {
-        background: #eadfe1;
-        color: #a18c94;
-        box-shadow: none;
-      }
-
-      .account-dialog .copy-account svg {
-        width: 16px; height: 16px; fill: none;
-        stroke: currentColor;
-        stroke-width: 1.6;
-      }
-
-      .copy-status {
-        font-size: 11px;
-        color: #926b78;
-        min-height: 22px; margin: 9px 0 0;
-      }
-
-      .account-thanks {
-        font-family: var(--serif);
-        font-size: 12px;
-        line-height: 1.9;
-        color: #a18a85;
-        margin: 12px 0 2px;
-      }
-
-      @media(prefers-reduced-motion:reduce) {
-        .petals {
-          display: none;
-        }
-        .reveal {
-          opacity: 1;
-          transform: none;
-          transition: none;
-        }
-        .account-card,.account-dialog[open] {
-          animation: none;
-        }
-      }
-    </style>
+    <!-- 디자인 파일: 기본 화면 → 팝업 → 애니메이션 순서로 읽습니다. -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/popup.css">
+    <link rel="stylesheet" href="css/effects.css">
+
+    <!--
+      기능 파일: defer는 HTML을 다 읽은 뒤 아래 순서대로 실행하라는 뜻입니다.
+      config.js(입력 정보) → main.js(공통 도구) → 각 기능 순서를 유지하세요.
+      설치나 빌드 없이, 이 폴더 그대로 GitHub Pages에서 사용할 수 있습니다.
+    -->
+    <script src="js/config.js" defer></script>
+    <script src="js/main.js" defer></script>
+    <script src="js/gallery.js" defer></script>
+    <script src="js/accounts.js" defer></script>
+    <script src="js/effects.js" defer></script>
   </head>
   <body>
+    <!--
+      이 파일에는 화면의 순서와 틀을 남겼습니다.
+      내용 수정은 js/config.js부터 시작하세요. 자세한 안내는 README.md에 있습니다.
+      class는 CSS 디자인 이름, id는 JavaScript가 찾을 고유한 이름입니다.
+      data-bind="groom.name"은 config.js의 groom.name 값을 넣으라는 표시입니다.
+      기능이 연결된 id와 data-bind는 이름을 바꾸지 않는 편이 좋습니다.
+    -->
     <main>
-      <!-- 01. 첫 화면 -->
+
+      <!-- 01. 첫 화면
+           대표 사진·이름·예식 일시. 사진 경로와 이름은 config.js에서 수정합니다. -->
       <section class="hero">
+        <!-- 꽃잎은 이 첫 구역 안에만 생성됩니다. -->
         <div class="petals" id="petals" aria-hidden="true"></div>
         <p class="eyebrow">WEDDING INVITATION</p>
         <h1>
@@ -799,18 +43,22 @@
           <span class="amp">&amp;</span>
           <span data-bind="bride.name">신부 이름</span>
         </h1>
+        <!-- 대표 사진이 정상적으로 불러와지면 아래 안내가 사진으로 바뀝니다. -->
         <div class="cover" id="cover">
           <div class="photo-empty">
             <span class="frame-label">OUR BEGINNING</span>
             <span class="flower" aria-hidden="true">❀</span>
-            두 사람의 사진이<br>들어갈 자리
+            두 사람의 사진이
+            <br>
+            들어갈 자리
           </div>
         </div>
         <p class="caption" id="ceremonyDate">예식 날짜 · 시간 입력</p>
         <p class="caption" data-bind="venue.name">예식장 이름 · 홀 입력</p>
       </section>
-      
-      <!-- 02. 초대글 -->
+
+      <!-- 02. 초대글
+           본문은 config.js의 invitation에 적습니다. 줄바꿈도 그대로 반영됩니다. -->
       <section class="invitation">
         <p class="eyebrow">INVITATION</p>
         <h2>우리 결혼합니다!</h2>
@@ -822,8 +70,9 @@
           올림
         </p>
       </section>
-      
-      <!-- 03. 예식 날짜 -->
+
+      <!-- 03. 예식 날짜
+           아래 숫자는 main.js가 자동으로 채웁니다. dateISO만 수정하세요. -->
       <section class="date pink">
         <div class="date-display">
           <span id="year">YEAR</span>
@@ -850,8 +99,9 @@
           </div>
         </div>
       </section>
-      
-      <!-- 04. 가족 소개 -->
+
+      <!-- 04. 가족 소개
+           동일한 data-bind가 여러 곳에 있어도 설정 한 곳에서 함께 바뀝니다. -->
       <section class="family">
         <p class="eyebrow">WITH OUR FAMILIES</p>
         <p class="role">GROOM</p>
@@ -864,22 +114,26 @@
         <p class="english" data-bind="bride.english"></p>
         <p class="parents" data-bind="bride.parents"></p>
       </section>
-      
-      <!-- 05. 사진 갤러리 -->
+
+      <!-- 05. 사진 갤러리
+           gallery.js가 config.js의 photos 목록으로 사진 버튼을 만듭니다. -->
       <section class="gallery">
         <p class="eyebrow">GALLERY</p>
         <h2>우리의 이야기</h2>
         <p class="small" id="galleryHint">함께한 순간들을 담을 공간입니다.</p>
+        <!-- 빈 영역이 정상입니다. gallery.js가 사진을 채웁니다. -->
         <div class="gallery-grid" id="gallery"></div>
         <button class="outline" id="morePhotos" hidden>사진 더 보기</button>
       </section>
-      
-      <!-- 06. 오시는 길 -->
+
+      <!-- 06. 오시는 길
+           예식장·교통 안내는 config.js의 venue에서 수정합니다. -->
       <section class="location pink">
         <p class="eyebrow">LOCATION</p>
         <h2>오시는 길</h2>
         <p class="venue" data-bind="venue.name"></p>
         <p class="small" data-bind="venue.address"></p>
+        <!-- 지도 안내 상자입니다. 아래 버튼을 누르면 각 지도 서비스가 열립니다. -->
         <div class="map-placeholder" id="mapPlaceholder">
           <b>예식장 위치 안내</b>
           <span>장소를 입력하면 지도 연결 버튼이 표시됩니다.</span>
@@ -897,14 +151,18 @@
           </article>
         </div>
       </section>
-      
-      <!-- 07. 마음 전하실 곳 -->
+
+      <!-- 07. 마음 전하실 곳
+           accounts.js가 선택한 측의 사람들만 좌우로 순회하도록 합니다. -->
       <section class="account pink">
         <p class="eyebrow">ACCOUNT</p>
         <h2>마음 전하실 곳</h2>
         <p class="intro">
-          함께해 주시는 따뜻한 마음에 감사드립니다.<br>전해 주신 축복을 소중히 간직하겠습니다.
+          함께해 주시는 따뜻한 마음에 감사드립니다.
+          <br>
+          전해 주신 축복을 소중히 간직하겠습니다.
         </p>
+        <!-- 신랑측/신부측 전환. aria 속성은 화면 읽기 도구와 키보드 사용을 돕습니다. -->
         <div class="tabs" role="tablist" aria-label="계좌 안내">
           <button id="tabGroom" role="tab" aria-selected="true" aria-controls="accounts">신랑측</button>
           <button id="tabBride" role="tab" aria-selected="false" aria-controls="accounts" tabindex="-1">신부측</button>
@@ -914,17 +172,25 @@
           <p class="account-position" id="accountPosition" aria-live="polite" aria-atomic="true"></p>
           <button class="account-arrow" id="nextAccount" aria-label="다음 계좌">›</button>
         </div>
+        <!-- 관계와 이름, 계좌 보기 버튼을 넣는 영역입니다. 번호는 팝업에만 넣습니다. -->
         <div id="accounts" role="tabpanel" aria-labelledby="tabGroom"></div>
       </section>
-      
-      <!-- 08. 감사 인사 -->
+
+      <!-- 08. 감사 인사
+           아래 인사말은 HTML에서 직접 바꾸세요. 공유 버튼은 main.js와 연결됩니다. -->
       <section class="closing">
         <p class="eyebrow">THANK YOU</p>
         <h2>우리의 시작을 함께해 주세요</h2>
-        <p>귀한 걸음으로 축복해 주시는 마음,<br>오래도록 기억하며 행복하게 살겠습니다.</p>
+        <p>
+          귀한 걸음으로 축복해 주시는 마음,
+          <br>
+          오래도록 기억하며 행복하게 살겠습니다.
+        </p>
         <button class="outline share" id="share">청첩장 공유하기</button>
       </section>
     </main>
+
+    <!-- 사진 확대 팝업: 기본 상태는 닫힘. gallery.js에서 사진을 누르면 엽니다. -->
     <dialog id="lightbox" aria-label="웨딩 사진 크게 보기">
       <div class="modal-top">
         <span id="photoCount"></span>
@@ -936,6 +202,7 @@
         <button id="nextPhoto">다음 →</button>
       </div>
     </dialog>
+
     <!-- 계좌 상세 팝업: 계좌 보기를 눌렀을 때만 정보가 들어갑니다. -->
     <dialog id="accountDialog" class="account-dialog" aria-labelledby="accountDialogTitle">
       <div class="account-dialog-header">
@@ -944,6 +211,7 @@
         <p class="eyebrow">WITH YOUR BLESSING</p>
         <h2 id="accountDialogTitle">마음을 전하실 곳</h2>
       </div>
+      <!-- 빈 텍스트 영역은 계좌 보기 클릭 시 채우고, 닫을 때 다시 비웁니다. -->
       <div class="account-dialog-body">
         <p class="popup-role" id="popupRole"></p>
         <p class="popup-holder" id="popupHolder"></p>
@@ -951,6 +219,7 @@
           <p class="popup-bank" id="popupBank"></p>
           <p class="popup-number" id="popupNumber"></p>
         </div>
+        <!-- 복사 아이콘과 버튼 문구. 번호가 없는 경우 accounts.js가 비활성화합니다. -->
         <button class="copy-account" id="copyAccountNumber">
           <svg viewBox="0 0 24 24" aria-hidden="true">
             <rect x="8" y="8" width="12" height="13" rx="2"></rect>
@@ -960,516 +229,14 @@
         </button>
         <p class="copy-status" id="accountCopyStatus" role="status" aria-live="polite"></p>
         <p class="account-thanks">
-          전해 주시는 따뜻한 마음,<br>소중히 간직하겠습니다.
+          전해 주시는 따뜻한 마음,
+          <br>
+          소중히 간직하겠습니다.
         </p>
       </div>
     </dialog>
-    <div class="toast" id="toast" role="status" hidden>
-    </div>
-    <script>
-      // ============================================================
-      // 1. 청첩장 정보 수정: 이 CONFIG에서 내용과 사진을 바꾸세요.
-      // ============================================================
-      // photos: 사진 파일 경로 (대소문자를 정확하게 입력)
-      // venue.naverMapUrl: 네이버 지도에서 복사한 장소 공유 링크
-      // accounts: 각 측의 본인 → 아버지 → 어머니 순서
-      // 부모님 bank와 number는 빈칸입니다. 실제 은행과 번호를 입력하세요.
-      // 신부 본인 number의 test도 실제 계좌번호로 교체하세요.
-      const CONFIG = {
-        "groom": {"name": "최지훈", "english": "JIHOON CHOI", "parents": "최진오·배순득의 아들"},
-        "bride": {"name": "정유리", "english": "YURI JUNG", "parents": "정영균·김명숙의 딸"},
-        "dateISO": "2027-04-18T15:00:00+09:00",
-        "coverPhoto": "Images/Main.jpg",
-        "invitation": "함께하는 날들이 즐거워\n앞으로의 날들도 함께하기로 했습니다.\n\n많이 웃고 서로를 아끼며\n오래도록 나란히 걷겠습니다.\n\n저희가 첫걸음을 내딛는 기쁜 날,\n소중한 분들을 초대합니다.",
-        "photos": ["Images/02.jpg", "Images/03.jpg", "Images/04.jpg"],
-        "venue": {
-          "name": "서울대학교 호암교수회관 삼성컨벤션센터",
-          "address": "서울시 관악구 관악로1 서울대학교 호암교수회관\n* 서울대 교수회관이 아닙니다.",
-          "search": "서울대학교 호암교수회관 삼성컨벤션센터",
-          "naverMapUrl": "",
-          "transport": "2호선 낙성대역 4번 출구 장블랑제리 앞\n→ 관악02-1, 02-2 승차 → 호암교수회관 하차",
-          "parking": "웨딩홀 앞 지상 주차장에 무료 주차 가능합니다.\n* 서울대 정문이 아닌 낙성대 방향으로 진입하셔야 요금이 부과되지 않습니다."
-        },
-        "accounts": {
-          "groom": [
-            {"role": "신랑", "holder": "최지훈", "bank": "신한은행", "number": "110-406-931510"},
-            {"role": "신랑 아버지", "holder": "최진오", "bank": "우리은행", "number": "123-456-789000"},
-            {"role": "신랑 어머니", "holder": "배순득", "bank": "하나은행", "number": "123-456-789000"}
-          ],
-          "bride": [
-            {"role": "신부", "holder": "정유리", "bank": "신한은행", "number": "110-406-931510"},
-            {"role": "신부 아버지", "holder": "정영균", "bank": "우리은행", "number": "123-456-789999"},
-            {"role": "신부 어머니", "holder": "김명숙", "bank": "하나은행", "number": "123-456-789999"},
-          ]
-        }
-      };
 
-      // ============================================================
-      // 2. 공통 도구와 기본 정보
-      // ============================================================
-      const $ = (id) => document.getElementById(id);
-      const getConfig = (path) => path.split('.').reduce((value, key) => value?.[key], CONFIG);
-
-      for (const element of document.querySelectorAll('[data-bind]')) {
-        element.textContent = getConfig(element.dataset.bind) || '';
-      }
-
-      $('invitationText').textContent = CONFIG.invitation;
-      document.title = `${CONFIG.groom.name} ♥ ${CONFIG.bride.name} 결혼합니다`;
-
-      function createPhoto(src, alt) {
-        const image = new Image();
-        image.alt = alt;
-        image.loading = 'lazy';
-        image.src = src;
-        return image;
-      }
-
-      if (CONFIG.coverPhoto) {
-        const image = new Image();
-        image.alt = '신랑 신부의 웨딩 사진';
-        image.loading = 'eager';
-        image.addEventListener('load', () => $('cover').replaceChildren(image));
-        image.src = CONFIG.coverPhoto;
-      }
-
-      let toastTimer;
-
-      function notify(message) {
-        $('toast').textContent = message;
-        $('toast').hidden = false;
-        clearTimeout(toastTimer);
-        toastTimer = setTimeout(() => { $('toast').hidden = true; }, 3000);
-      }
-
-      async function copy(text) {
-        try {
-          await navigator.clipboard.writeText(text);
-          notify('복사되었습니다.');
-        } catch {
-          window.prompt('아래 내용을 선택하여 복사해 주세요.', text);
-        }
-      }
-
-      // ============================================================
-      // 3. 예식 날짜와 카운트다운 (한국 시간)
-      // ============================================================
-      const wedding = CONFIG.dateISO ? new Date(CONFIG.dateISO) : null;
-
-      if (wedding && !Number.isNaN(wedding.getTime())) {
-        const formatter = new Intl.DateTimeFormat('en-US', {
-          timeZone: 'Asia/Seoul',
-          year: 'numeric', month: '2-digit', day: '2-digit',
-          hour: 'numeric', minute: '2-digit',
-          hour12: true
-        });
-        const parts = Object.fromEntries(
-          formatter.formatToParts(wedding).map((part) => [part.type, part.value])
-        );
-
-        $('year').textContent = parts.year;
-        $('monthDay').textContent = `${parts.month}.${parts.day}`;
-        $('clock').textContent = parts.hour
-          + (parts.minute === '00' ? '' : ':' + parts.minute)
-          + ' ' + parts.dayPeriod;
-
-        $('ceremonyDate').textContent = new Intl.DateTimeFormat('ko-KR', {
-          timeZone: 'Asia/Seoul',
-          year: 'numeric', month: 'long', day: 'numeric',
-          weekday: 'long', hour: 'numeric', minute: '2-digit'
-        }).format(wedding);
-
-        function tick() {
-          const seconds = Math.max(0, Math.floor((wedding - Date.now()) / 1000));
-          $('days').textContent = Math.floor(seconds / 86400);
-          $('hours').textContent = String(Math.floor(seconds % 86400 / 3600)).padStart(2, '0');
-          $('minutes').textContent = String(Math.floor(seconds % 3600 / 60)).padStart(2, '0');
-          $('seconds').textContent = String(seconds % 60).padStart(2, '0');
-          if (wedding <= Date.now()) {
-            $('dateSub').textContent = '함께해 주셔서 감사합니다';
-          }
-        }
-
-        tick();
-        setInterval(tick, 1000);
-      } else {
-        $('dateSub').textContent = '예식 날짜를 입력하면 카운트다운이 시작됩니다.';
-      }
-
-      // ============================================================
-      // 4. 팝업 공통 동작 (스크롤 잠금, 닫기, 포커스 복원)
-      // ============================================================
-      let scrollBeforeDialog = 0;
-      let dialogOpener = null;
-
-      function openDialog(dialog) {
-        dialogOpener = document.activeElement;
-        scrollBeforeDialog = window.scrollY;
-        document.body.style.position = 'fixed';
-        document.body.style.top = `-${scrollBeforeDialog}px`;
-        document.body.style.width = '100%';
-        dialog.showModal();
-      }
-
-      for (const dialog of document.querySelectorAll('dialog')) {
-        dialog.addEventListener('close', () => {
-          document.body.style.position = '';
-          document.body.style.top = '';
-          document.body.style.width = '';
-          window.scrollTo(0, scrollBeforeDialog);
-          if (dialogOpener?.isConnected) {
-            dialogOpener.focus({ preventScroll: true });
-          }
-        });
-
-        // 팝업 바깥을 누르면 닫기. Escape 키는 dialog의 기본 기능입니다.
-        dialog.addEventListener('click', (event) => {
-          if (event.target !== dialog) return;
-          const rect = dialog.getBoundingClientRect();
-          if (
-            event.clientX < rect.left || event.clientX > rect.right ||
-            event.clientY < rect.top || event.clientY > rect.bottom
-          ) {
-            dialog.close();
-          }
-        });
-      }
-
-      // ============================================================
-      // 5. 사진 갤러리와 확대 보기
-      // ============================================================
-      let expanded = false;
-      let currentPhoto = 0;
-
-      function renderGallery() {
-        const grid = $('gallery');
-        grid.replaceChildren();
-
-        if (!CONFIG.photos.length) {
-          for (let index = 1; index <= 9; index++) {
-            const cell = document.createElement('div');
-            cell.className = 'thumb';
-            cell.textContent = String(index).padStart(2, '0');
-            cell.setAttribute('aria-label', `사진 ${index} 자리`);
-            grid.append(cell);
-          }
-          return;
-        }
-
-        $('galleryHint').textContent = '사진을 누르면 크게 볼 수 있습니다.';
-        const photos = CONFIG.photos.slice(0, expanded ? undefined : 9);
-
-        photos.forEach((src, index) => {
-          const button = document.createElement('button');
-          button.className = 'thumb';
-          button.setAttribute('aria-label', `사진 ${index + 1} 크게 보기`);
-          const image = createPhoto(src, `웨딩 사진 ${index + 1}`);
-          image.onerror = () => {
-            button.textContent = '사진 확인 필요';
-            button.disabled = true;
-          };
-          button.append(image);
-          button.onclick = () => {
-            currentPhoto = index;
-            showPhoto();
-            openDialog($('lightbox'));
-          };
-          grid.append(button);
-        });
-
-        $('morePhotos').hidden = CONFIG.photos.length <= 9;
-        $('morePhotos').textContent = expanded ? '사진 접기' : '사진 더 보기';
-      }
-
-      function showPhoto() {
-        $('largePhoto').src = CONFIG.photos[currentPhoto];
-        $('largePhoto').alt = `웨딩 사진 ${currentPhoto + 1}`;
-        $('photoCount').textContent = `${currentPhoto + 1} / ${CONFIG.photos.length}`;
-      }
-
-      function movePhoto(direction) {
-        currentPhoto = (currentPhoto + direction + CONFIG.photos.length) % CONFIG.photos.length;
-        showPhoto();
-      }
-
-      $('morePhotos').onclick = () => {
-        expanded = !expanded;
-        renderGallery();
-      };
-      $('closeLightbox').onclick = () => $('lightbox').close();
-      $('previousPhoto').onclick = () => movePhoto(-1);
-      $('nextPhoto').onclick = () => movePhoto(1);
-      $('lightbox').addEventListener('keydown', (event) => {
-        if (event.key === 'ArrowLeft') movePhoto(-1);
-        if (event.key === 'ArrowRight') movePhoto(1);
-      });
-      renderGallery();
-
-      // ============================================================
-      // 6. 지도 버튼과 주소 복사
-      // ============================================================
-      if (CONFIG.venue.search || CONFIG.venue.naverMapUrl) {
-        const query = encodeURIComponent(CONFIG.venue.search || CONFIG.venue.name);
-        const title = document.createElement('b');
-        title.textContent = CONFIG.venue.name;
-        const note = document.createElement('span');
-        note.textContent = '아래 지도에서 위치와 경로를 확인해 주세요.';
-        $('mapPlaceholder').replaceChildren(title, note);
-        $('mapLinks').hidden = false;
-
-        const links = [
-          ['네이버 지도', CONFIG.venue.naverMapUrl || 'https://map.naver.com/p/search/' + query],
-          ['카카오맵', 'https://map.kakao.com/?q=' + query],
-          ['구글 지도', 'https://www.google.com/maps/search/?api=1&query=' + query]
-        ];
-
-        for (const [label, url] of links) {
-          const link = document.createElement('a');
-          link.textContent = label;
-          link.href = url;
-          link.target = '_blank';
-          link.rel = 'noopener noreferrer';
-          $('mapLinks').append(link);
-        }
-      }
-
-      if (CONFIG.venue.address && CONFIG.venue.address !== '예식장 주소 입력') {
-        $('copyAddress').disabled = false;
-        $('copyAddress').textContent = '주소 복사';
-        $('copyAddress').onclick = () => copy(CONFIG.venue.address);
-      }
-
-      // ============================================================
-      // 7. 계좌 카드: 선택한 측의 본인 → 아버지 → 어머니만 순환
-      // ============================================================
-      let accountSide = 'groom';
-      let accountIndex = 0;
-      let activeAccount = null;
-
-      function sideName(side) {
-        return side === 'groom' ? '신랑측' : '신부측';
-      }
-
-      function currentAccounts() {
-        return CONFIG.accounts[accountSide] || [];
-      }
-
-      function renderAccount() {
-        const list = currentAccounts();
-        const item = list[accountIndex];
-
-        for (const side of ['groom', 'bride']) {
-          const tab = $(side === 'groom' ? 'tabGroom' : 'tabBride');
-          tab.setAttribute('aria-selected', String(side === accountSide));
-          tab.tabIndex = side === accountSide ? 0 : -1;
-        }
-
-        const panel = $('accounts');
-        panel.replaceChildren();
-        panel.setAttribute('aria-labelledby', accountSide === 'groom' ? 'tabGroom' : 'tabBride');
-        $('previousAccount').disabled = list.length < 2;
-        $('nextAccount').disabled = list.length < 2;
-        $('accountPosition').textContent = item
-          ? `${item.role || sideName(accountSide)} · ${accountIndex + 1} / ${list.length}`
-          : sideName(accountSide);
-
-        const card = document.createElement('div');
-        card.className = 'account-card';
-        if (!item) {
-          const message = document.createElement('p');
-          message.textContent = '등록된 계좌가 없습니다.';
-          card.append(message);
-          panel.append(card);
-          return;
-        }
-
-        const role = document.createElement('p');
-        role.className = 'account-role';
-        role.textContent = item.role || sideName(accountSide);
-        const holder = document.createElement('p');
-        holder.className = 'holder';
-        holder.textContent = item.holder;
-        const button = document.createElement('button');
-        button.className = 'outline';
-        button.textContent = '계좌 보기';
-        button.setAttribute('aria-haspopup', 'dialog');
-        button.setAttribute('aria-controls', 'accountDialog');
-        button.onclick = () => openAccount(item);
-
-        card.append(role, holder, button);
-        panel.append(card);
-      }
-
-      function selectAccountSide(side) {
-        accountSide = side;
-        accountIndex = 0; // 탭을 선택하면 항상 해당 측의 본인부터 표시합니다.
-        renderAccount();
-      }
-
-      function stepAccount(direction) {
-        const count = currentAccounts().length;
-        if (!count) return;
-        accountIndex = (accountIndex + direction + count) % count;
-        renderAccount();
-      }
-
-      $('previousAccount').onclick = () => stepAccount(-1);
-      $('nextAccount').onclick = () => stepAccount(1);
-      $('tabGroom').onclick = () => selectAccountSide('groom');
-      $('tabBride').onclick = () => selectAccountSide('bride');
-
-      // 키보드로도 탭을 선택할 수 있습니다.
-      document.querySelector('.tabs').onkeydown = (event) => {
-        if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;
-        event.preventDefault();
-        let side;
-        if (event.key === 'Home') side = 'groom';
-        else if (event.key === 'End') side = 'bride';
-        else side = accountSide === 'groom' ? 'bride' : 'groom';
-        selectAccountSide(side);
-        $(side === 'groom' ? 'tabGroom' : 'tabBride').focus();
-      };
-
-      // ============================================================
-      // 8. 계좌 상세 팝업과 번호 복사
-      // ============================================================
-      function openAccount(item) {
-        activeAccount = item;
-        const hasNumber = Boolean(String(item.number || '').trim());
-        $('popupRole').textContent = item.role || sideName(accountSide);
-        $('popupHolder').textContent = item.holder;
-        $('popupBank').textContent = item.bank || '계좌 안내';
-        $('popupNumber').textContent = hasNumber ? item.number : '계좌 준비 중';
-        $('popupNumber').classList.toggle('is-empty', !hasNumber);
-        $('accountCopyStatus').textContent = '';
-        $('copyAccountLabel').textContent = hasNumber ? '계좌번호 복사하기' : '계좌 준비 중';
-        $('copyAccountNumber').disabled = !hasNumber;
-        openDialog($('accountDialog'));
-      }
-
-      $('closeAccountDialog').onclick = () => $('accountDialog').close();
-      $('accountDialog').addEventListener('close', () => {
-        activeAccount = null;
-        for (const id of ['popupRole', 'popupHolder', 'popupBank', 'popupNumber', 'accountCopyStatus']) {
-          $(id).textContent = '';
-        }
-      });
-
-      $('copyAccountNumber').onclick = async () => {
-        if (!activeAccount || !String(activeAccount.number || '').trim()) return;
-        const item = activeAccount;
-        const number = String(item.number).replace(/\s/g, '');
-        let success = false;
-
-        try {
-          await navigator.clipboard.writeText(number);
-          success = true;
-        } catch {
-          // 로컬 파일 또는 클립보드 API 미지원 브라우저에 대한 대체 처리
-          const field = document.createElement('textarea');
-          field.value = number;
-          field.style.cssText = 'position:fixed;left:0;top:0;opacity:0';
-          $('accountDialog').append(field);
-          field.focus();
-          field.select();
-          try {
-            success = document.execCommand('copy');
-          } catch {
-            success = false;
-          }
-          field.remove();
-          $('copyAccountNumber').focus();
-        }
-
-        if (activeAccount !== item || !$('accountDialog').open) return;
-        $('accountCopyStatus').textContent = success
-          ? '계좌번호가 복사되었습니다.'
-          : '위 계좌번호를 길게 누르거나 선택해 복사해 주세요.';
-        $('copyAccountLabel').textContent = success ? '복사 완료 ✓' : '계좌번호 복사하기';
-      };
-      renderAccount();
-
-      // ============================================================
-      // 9. 벚꽃잎: 첫 화면 안에서만 반복
-      // ============================================================
-      const hero = document.querySelector('.hero');
-      const petalLayer = $('petals');
-
-      function updatePetalDistance() {
-        petalLayer.style.setProperty('--petal-distance', `${hero.clientHeight + 70}px`);
-      }
-
-      updatePetalDistance();
-      if ('ResizeObserver' in window) {
-        new ResizeObserver(updatePetalDistance).observe(hero);
-      } else {
-        window.addEventListener('resize', updatePetalDistance);
-      }
-
-      const petalPositions = [10, 80, 55, 30];
-      const petalDelays = [-3, -8, -13, -6];
-      petalPositions.forEach((left, index) => {
-        const leaf = document.createElement('i');
-        leaf.className = 'petal';
-        const styles = {
-          '--left': `${left}%`,
-          '--size': '7px',
-          '--duration': '15s',
-          '--delay': `${petalDelays[index]}s`,
-          '--drift': '35px',
-          '--turn': '300deg',
-          '--sway': `${2 + index * 0.6}s`
-        };
-        for (const [property, value] of Object.entries(styles)) {
-          leaf.style.setProperty(property, value);
-        }
-        petalLayer.append(leaf);
-      });
-
-      // ============================================================
-      // 10. 구역 등장: 페이지를 연 뒤 각 요소에 한 번만 실행
-      // ============================================================
-      // 이미 등장한 요소는 관찰을 중단합니다. 다시 스크롤해도 숨기지 않습니다.
-      if (
-        'IntersectionObserver' in window &&
-        !window.matchMedia('(prefers-reduced-motion: reduce)').matches
-      ) {
-        const revealObserver = new IntersectionObserver((entries) => {
-          for (const entry of entries) {
-            if (!entry.isIntersecting) continue;
-            entry.target.classList.add('is-visible');
-            revealObserver.unobserve(entry.target);
-          }
-        }, { threshold: 0, rootMargin: '0px 0px -20px 0px' });
-
-        for (const element of document.querySelectorAll('main > section > :not(.petals)')) {
-          element.classList.add('reveal');
-          revealObserver.observe(element);
-        }
-      }
-
-      // ============================================================
-      // 11. 청첩장 공유
-      // ============================================================
-      $('share').onclick = async () => {
-        if (location.protocol === 'file:') {
-          notify('GitHub에 게시한 후 주소를 공유할 수 있습니다.');
-          return;
-        }
-        try {
-          if (navigator.share) {
-            await navigator.share({
-              title: document.title,
-              text: '소중한 분들을 우리의 결혼식에 초대합니다.',
-              url: location.href
-            });
-          } else {
-            await copy(location.href);
-          }
-        } catch (error) {
-          if (error.name !== 'AbortError') copy(location.href);
-        }
-      };
-    </script>
+    <!-- 복사 등의 결과를 잠깐 보여 주는 공통 안내 메시지입니다. -->
+    <div class="toast" id="toast" role="status" hidden></div>
   </body>
 </html>
