@@ -33,8 +33,7 @@ dialog::backdrop {
 .modal-top button,.modal-nav button {
   border: 1px solid var(--line);
   background: white;
-  padding: 5px 18px;
-  border-radius: 20px;
+  padding: 5px 18px; border-radius: 20px;
 }
 
 .modal-image {
@@ -48,6 +47,24 @@ dialog::backdrop {
   justify-content: space-between;
   margin-top: 14px;
 }
+
+.lightbox-stage {
+  position: relative;
+  touch-action: pan-y;
+}
+
+.photo-half {
+  position: absolute;
+  top: 0; bottom: 0;
+  width: 50%;
+  padding: 0; border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.photo-half-left  { left: 0; }
+.photo-half-right { right: 0; }
+
 
 /* 03. 잠깐 나타나는 안내 메시지 : 주소 복사 등의 결과를 화면 아래에 보여 줍니다. */
 
@@ -68,3 +85,4 @@ dialog::backdrop {
 .toast[hidden],[hidden] {
   display: none!important;
 }
+
