@@ -67,7 +67,7 @@ main {
 
 section {
   position: relative;
-  padding: 82px 30px;
+  padding: 80px 30px;
   text-align: center;
 }
 
@@ -230,8 +230,7 @@ p {
   margin: 10px 0 30px;
 }
 
-/* 카운트다운: 날짜 / 시 / 분 / 초를 같은 너비의 네 칸으로 표시합니다.
- */
+/* 카운트다운: 날짜 / 시 / 분 / 초를 같은 너비의 네 칸으로 표시합니다. */
 
 .countdown {
   display: grid;
@@ -254,8 +253,7 @@ p {
   color: var(--muted);
 }
 
-/* 08. 가족 소개: 신랑, 신부, 부모님 성함
- */
+/* 08. 가족 소개: 신랑, 신부, 부모님 성함 */
 
 .family .role {
   font: 11px Georgia,serif;
@@ -287,9 +285,7 @@ p {
   margin: 40px auto;
 }
 
-/* 09. 사진 갤러리
- * repeat(3, 1fr)는 같은 너비의 열 세 개입니다. gap은 사진 사이 간격입니다.
- */
+/* 09. 사진 갤러리 : repeat(3, 1fr)는 같은 너비의 열 세 개입니다. gap은 사진 사이 간격입니다. */
 
 .gallery {
   padding: 20px 22px 80px;
@@ -308,8 +304,7 @@ p {
 
 .thumb {
   aspect-ratio: 1;
-  border: 0;
-  padding: 0;
+  border: 0; padding: 0; 
   background: #f5efeb;
   position: relative;
   overflow: hidden;
@@ -334,9 +329,7 @@ p {
   object-fit: cover;
 }
 
-/*
- * 공통 테두리 버튼: 사진 더 보기, 주소 복사, 계좌 보기 등에 사용합니다.
- */
+/* 공통 테두리 버튼: 사진 더 보기, 주소 복사, 계좌 보기 등에 사용합니다. */
 
 .outline {
   display: block;
@@ -347,9 +340,7 @@ p {
   font-size: 12px;
 }
 
-/* 10. 오시는 길
- * map-placeholder는 위치 안내 상자이고, 실제 지도는 지도 버튼으로 엽니다.
- */
+/* 10. 오시는 길 : 지도 버튼으로 실제 지도를 엽니다. */
 
 .venue {
   font-family: var(--serif);
@@ -381,9 +372,11 @@ p {
   border-radius: 3px;
 }
 
-/*
- * 대중교통과 주차 안내는 왼쪽 정렬로 읽기 쉽게 표시합니다.
- */
+.location {
+  padding-bottom: 35px;
+}
+
+/* 대중교통과 주차 안내는 왼쪽 정렬로 읽기 쉽게 표시합니다. */
 
 .transport {
   text-align: left;
@@ -413,7 +406,7 @@ p {
 /* 11. 마음 전하실 곳: 탭과 계좌 카드 */
 
 .account {
-  padding-top: 20px;
+  padding-top: 30px;
 }
 
 .account h2 {
