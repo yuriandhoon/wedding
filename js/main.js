@@ -79,12 +79,8 @@ const Wedding = (() => {
     // 방문자가 해외에 있어도 화면에는 한국 시간 기준 예식 일시를 표시합니다.
     const formatter = new Intl.DateTimeFormat('en-US', {
       timeZone: 'Asia/Seoul',
-      year: 'numeric',
-      month: '2-digit',
-      day: '2-digit',
-      hour: 'numeric',
-      minute: '2-digit',
-      hour12: true
+      year: 'numeric', month: '2-digit', day: '2-digit',
+      hour: 'numeric', minute: '2-digit', hour12: true
     });
     const parts = Object.fromEntries(
       formatter.formatToParts(wedding).map((part) => [part.type, part.value])
@@ -98,12 +94,9 @@ const Wedding = (() => {
 
     $('ceremonyDate').textContent = new Intl.DateTimeFormat('ko-KR', {
       timeZone: 'Asia/Seoul',
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric',
+      year: 'numeric', month: 'long', day: 'numeric',
       weekday: 'long',
-      hour: 'numeric',
-      minute: '2-digit'
+      hour: 'numeric', minute: '2-digit'
     }).format(wedding);
 
     // 남은 시간을 초로 계산한 뒤 일/시/분/초로 나눕니다.
