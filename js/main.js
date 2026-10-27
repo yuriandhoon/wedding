@@ -188,13 +188,7 @@ const Wedding = (() => {
       $('mapLinks').append(link);
     }
   }
-
-  if (CONFIG.venue.address && CONFIG.venue.address !== '예식장 주소 입력') {
-    $('copyAddress').disabled = false;
-    $('copyAddress').textContent = '주소 복사';
-    $('copyAddress').onclick = () => copy(CONFIG.venue.address);
-  }
-
+  
   // ──────────────────────────────────────────────────────
   // 05. 청첩장 공유
   // ──────────────────────────────────────────────────────
