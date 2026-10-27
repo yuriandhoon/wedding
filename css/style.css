@@ -517,6 +517,8 @@ p {
   color: #ae7487;
   font-family: var(--serif);
   font-size: 16px;
+  position: relative;
+  padding-right: 44px;
 }
 
 .account-group summary::-webkit-details-marker {
@@ -524,11 +526,15 @@ p {
 }
 
 .account-group summary::after {
-  content: "⌄";
-  float: right;
-  font-family: sans-serif;
-  font-size: 20px;
-  line-height: 1;
+  content: "";
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  width: 8px;
+  height: 8px;
+  border-right: 1.5px solid #ae7487;
+  border-bottom: 1.5px solid #ae7487;
+  transform: translateY(-70%) rotate(45deg);
 }
 
 .account-group[open] summary {
@@ -536,7 +542,7 @@ p {
 }
 
 .account-group[open] summary::after {
-  transform: rotate(180deg);
+  transform: translateY(-25%) rotate(225deg);
 }
 
 .account-row {
