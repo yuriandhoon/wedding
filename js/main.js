@@ -175,11 +175,6 @@ const Wedding = (() => {
   if (CONFIG.venue.search || CONFIG.venue.naverMapUrl) {
     // 한글과 공백을 URL에 넣을 수 있는 형태로 바꿉니다.
     const query = encodeURIComponent(CONFIG.venue.search || CONFIG.venue.name);
-    const title = document.createElement('b');
-    title.textContent = CONFIG.venue.name;
-    const note = document.createElement('span');
-    note.textContent = '아래 지도에서 위치와 경로를 확인해 주세요.';
-    $('mapPlaceholder').replaceChildren(title, note);
     $('mapLinks').hidden = false;
 
     // 네이버 공유 링크가 있으면 우선 사용합니다. 없으면 장소 이름으로 검색합니다.
