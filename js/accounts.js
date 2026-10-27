@@ -11,17 +11,6 @@
   const { copy } = Wedding;
   const groups = document.querySelectorAll(".account-group");
 
-  // 한쪽을 펼치면 다른 쪽은 접습니다.
-  groups.forEach((group) => {
-    group.addEventListener("toggle", () => {
-      if (!group.open) return;
-
-      groups.forEach((other) => {
-        if (other !== group) other.open = false;
-      });
-    });
-  });
-
   // config.js의 신랑측·신부측 계좌를 각각 해당 목록에 넣습니다.
   for (const side of ["groom", "bride"]) {
     const list = document.getElementById(`${side}Accounts`);
