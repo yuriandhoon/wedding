@@ -441,9 +441,7 @@ p {
   color: var(--muted);
 }
 
-/*
- * 12. 마지막 감사 인사와 공유 버튼
- */
+/* 12. 마지막 감사 인사와 공유 버튼 */
 
 .closing {
   padding: 65px 28px;
@@ -534,7 +532,7 @@ p {
   height: 8px;
   border-right: 1.5px solid #ae7487;
   border-bottom: 1.5px solid #ae7487;
-  transform: translateY(-70%) rotate(45deg);
+  transform: translateY(-50%) rotate(45deg);
 }
 
 .account-group[open] summary {
@@ -542,7 +540,7 @@ p {
 }
 
 .account-group[open] summary::after {
-  transform: translateY(-25%) rotate(225deg);
+  transform: translateY(-50%) rotate(225deg);
 }
 
 .account-row {
