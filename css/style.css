@@ -372,7 +372,7 @@ p {
 }
 
 .maplinks a {
-  font-size: 11px;
+  font-size: 12px;
   background: #fff;
   border: 1px solid var(--line);
   padding: 10px 2px;
@@ -511,10 +511,8 @@ p {
 .account-group summary::after {
   content: "";
   position: absolute;
-  right: 20px;
-  top: 50%;
-  width: 8px;
-  height: 8px;
+  right: 20px; top: 50%;
+  width: 8px; height: 8px;
   border-right: 1.5px solid #ae7487;
   border-bottom: 1.5px solid #ae7487;
   transform: translateY(-50%) rotate(45deg);
