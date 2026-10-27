@@ -86,35 +86,14 @@
   transition: opacity .85s ease,transform .85s cubic-bezier(.2,.65,.3,1);
 }
 
-/* 한 번 표시되면 이 상태를 유지합니다. 재등장 여부는 js/effects.js에서 결정합니다.
- */
+/* 한 번 표시되면 이 상태를 유지합니다. 재등장 여부는 js/effects.js에서 결정합니다. */
 
 .reveal.is-visible {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* 04. 계좌를 넘길 때 새 카드가 짧게 나타나는 효과
- */
-
-.account-card {
-  animation: account-appear .35s ease;
-}
-
-@keyframes account-appear {
-  from {
-    opacity: 0;
-    transform: translateX(8px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-/* 05. 휴대폰이나 컴퓨터의 “동작 줄이기” 설정 존중
- * 이 설정을 켠 방문자에게는 꽃잎과 등장 동작을 생략하고 내용을 바로 보여 줍니다.
- */
+/* 05. 휴대폰이나 컴퓨터의 “동작 줄이기” 설정 존중 : 이 설정을 켠 방문자에게는 꽃잎과 등장 동작을 생략하고 내용을 바로 보여 줍니다. */
 
 @media(prefers-reduced-motion:reduce) {
   .petal {
