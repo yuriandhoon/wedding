@@ -44,7 +44,7 @@
 
       // 예금주나 은행명은 제외하고 계좌번호만 복사합니다.
       button.addEventListener("click", () => {
-        copy(number.replace(/\s/g, ""));
+        copy(number.replace(/[\s-]/g, ""));
       });
 
       info.append(role, numberText, holder);
