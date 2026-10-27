@@ -117,9 +117,10 @@
         <p class="eyebrow">GALLERY</p>
         <h2>우리의 이야기</h2>
         <p class="small" id="galleryHint">함께한 순간들을 담을 공간입니다.</p>
-        <!-- 빈 영역이 정상입니다. gallery.js가 사진을 채웁니다. -->
-        <div class="gallery-grid" id="gallery"></div>
-        <button class="outline" id="morePhotos" hidden>사진 더 보기</button>
+        <!-- 현재 선택한 큰 사진 -->
+        <img class="gallery-main" id="galleryMain" alt="">
+        <!-- 가로로 스크롤하는 작은 사진 목록 -->
+        <div class="gallery-grid" id="gallery" aria-label="웨딩 사진 목록"></div>
       </section>
 
       <!-- 06. 오시는 길 : 예식장·교통 안내는 config.js의 venue에서 수정합니다. -->
