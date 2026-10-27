@@ -4,9 +4,7 @@
  */
 
 
-/* 01. 벚꽃이 보이는 범위
- * hero 안에 벚꽃을 가두므로 첫 구역을 벗어나면 꽃잎이 보이지 않습니다.
- */
+/* 01. 벚꽃이 보이는 범위 : hero 안에 벚꽃을 가두므로 첫 구역을 벗어나면 꽃잎이 보이지 않습니다. */
 
 .hero {
   overflow: hidden;
@@ -14,8 +12,7 @@
 }
 
 /* position: absolute는 첫 구역을 기준으로 합니다. fixed로 바꾸면 전체 화면을 따라오게 됩니다.
- * pointer-events: none은 꽃잎이 사진이나 버튼 클릭을 가로막지 않도록 합니다.
- */
+ * pointer-events: none은 꽃잎이 사진이나 버튼 클릭을 가로막지 않도록 합니다. */
 
 .petals {
   position: absolute;
@@ -26,8 +23,7 @@
 }
 
 /* 02. 꽃잎 하나의 크기와 낙하
- * --left, --size, --duration 등의 값은 js/effects.js에서 넣습니다.
- */
+ * --left, --size, --duration 등의 값은 js/effects.js에서 넣습니다. */
 
 .petal {
   position: absolute;
