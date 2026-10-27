@@ -81,6 +81,43 @@
   $('closeLightbox').onclick = () => $('lightbox').close();
   $('previousPhoto').onclick = () => movePhoto(-1);
   $('nextPhoto').onclick = () => movePhoto(1);
+
+  const stage = $("lightboxStage");
+  let touchStartX = null;
+  let lastWheelTime = 0;
+  
+  // 휴대폰: 왼쪽으로 밀면 다음 사진, 오른쪽으로 밀면 이전 사진
+  stage.addEventListener("touchstart", (event) => {
+    touchStartX = event.changedTouches[0].clientX;
+  }, { passive: true });
+  
+  stage.addEventListener("touchend", (event) => {
+    if (touchStartX === null) return;
+  
+    const distance = event.changedTouches[0].clientX - touchStartX;
+    touchStartX = null;
+  
+    if (Math.abs(distance) < 45) return;
+    event.preventDefault(); // 밀기를 클릭으로도 처리하지 않도록 함
+    movePhoto(distance < 0 ? 1 : -1);
+  }, { passive: false });
+  
+  // 컴퓨터: 사진 위에서 휠을 굴려 이동
+  stage.addEventListener("wheel", (event) => {
+    const distance = Math.abs(event.deltaX) > Math.abs(event.deltaY)
+      ? event.deltaX
+      : event.deltaY;
+  
+    if (Math.abs(distance) < 20) return;
+    event.preventDefault();
+  
+    // 휠 한 번에 여러 장이 연속으로 넘어가지 않도록 제한
+    if (Date.now() - lastWheelTime < 450) return;
+    lastWheelTime = Date.now();
+  
+    movePhoto(distance > 0 ? 1 : -1);
+  }, { passive: false });
+    
   $('lightbox').addEventListener('keydown', (event) => {
     if (event.key === 'ArrowLeft') movePhoto(-1);
     if (event.key === 'ArrowRight') movePhoto(1);
