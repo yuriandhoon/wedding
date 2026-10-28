@@ -120,49 +120,6 @@ const Wedding = (() => {
   }
 
   // ──────────────────────────────────────────────────────
-  // 03. 모든 팝업의 열기와 닫기
-  // ──────────────────────────────────────────────────────
-  // 팝업을 열기 전의 스크롤 위치와 버튼을 기억합니다.
-  let scrollBeforeDialog = 0;
-  let dialogOpener = null;
-
-  // 사진 확대창과 계좌창에서 함께 사용합니다.
-  // 배경 페이지를 고정해 팝업 뒤쪽이 스크롤되지 않게 합니다.
-  function openDialog(dialog) {
-    dialogOpener = document.activeElement;
-    scrollBeforeDialog = window.scrollY;
-    document.body.style.position = 'fixed';
-    document.body.style.top = `-${scrollBeforeDialog}px`;
-    document.body.style.width = '100%';
-    dialog.showModal();
-  }
-
-  for (const dialog of document.querySelectorAll('dialog')) {
-    // 닫을 때 원래 스크롤 위치와 버튼의 키보드 초점을 복원합니다.
-    dialog.addEventListener('close', () => {
-      document.body.style.position = '';
-      document.body.style.top = '';
-      document.body.style.width = '';
-      window.scrollTo(0, scrollBeforeDialog);
-      if (dialogOpener?.isConnected) {
-        dialogOpener.focus({ preventScroll: true });
-      }
-    });
-
-    // 팝업 바깥을 누르면 닫기. Escape 키는 dialog의 기본 기능입니다.
-    dialog.addEventListener('click', (event) => {
-      if (event.target !== dialog) return;
-      const rect = dialog.getBoundingClientRect();
-      if (
-        event.clientX < rect.left || event.clientX > rect.right ||
-        event.clientY < rect.top || event.clientY > rect.bottom
-      ) {
-        dialog.close();
-      }
-    });
-  }
-
-  // ──────────────────────────────────────────────────────
   // 04. 지도 연결과 주소 복사
   // ──────────────────────────────────────────────────────
   if (CONFIG.venue.search || CONFIG.venue.naverMapUrl) {
@@ -216,5 +173,5 @@ const Wedding = (() => {
 
   // 다른 파일에 필요한 도구만 Wedding라는 이름으로 전달합니다.
   // 내부의 날짜 계산이나 팝업 상태는 이 함수 안에서만 사용합니다.
-  return { $, createPhoto, notify, copy, openDialog };
+  return { $, createPhoto, notify, copy };
 })();
