@@ -276,23 +276,23 @@ p {
   margin: 12px 0 3px;
 }
 
-.english {
-  font: italic 14px Georgia,serif;
-  color: var(--muted);
-  letter-spacing: 1px;
-}
-
 .parents {
   margin: 18px 0 0;
   color: var(--muted);
   font-size: 13px;
 }
 
-.divider {
-  width: 1px;
-  height: 40px;
-  background: var(--line);
-  margin: 40px auto;
+/* 같은 너비의 두 칸에 신랑·신부 정보를 배치합니다. */
+.family-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  align-items: start;
+}
+
+/* 부모님 소개가 길면 공백을 기준으로 줄바꿈합니다. */
+.family-grid .parents {
+  word-break: keep-all;
 }
 
 /* 09. 사진 갤러리 : 큰 사진과 스크롤 썸네일 */
