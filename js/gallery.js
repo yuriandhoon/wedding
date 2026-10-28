@@ -1,5 +1,5 @@
 /*
- * gallery.js — 사진 목록, 더 보기, 확대창의 이전/다음
+ * gallery.js — 사진 목록, 사진 넘기기
  * 사진 추가와 순서 변경: config.js의 photos
  * 사진 배치 디자인: css/style.css / 확대창 디자인: css/popup.css
  */
