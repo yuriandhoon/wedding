@@ -107,7 +107,4 @@
     transform: none;
     transition: none;
   }
-  .account-card,.account-dialog[open] {
-    animation: none;
-  }
 }
