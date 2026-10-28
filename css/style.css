@@ -487,12 +487,6 @@ p {
   }
 }
 
-/* 14. 주소의 줄바꿈과 계좌 이동 버튼 : 주소 문자열의 \n도 줄바꿈으로 표시합니다. */
-
-[data-bind="venue.address"] {
-  white-space: pre-line;
-}
-
 /* 신랑측·신부측 접이식 계좌 목록 */
 .account-group {
   margin-top: 12px;
