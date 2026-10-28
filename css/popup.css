@@ -3,25 +3,7 @@
  * style.css 다음에 읽도록 index.html에서 연결합니다.
  */
 
-/* 01. 팝업 공통 외형 : HTML의 <dialog>는 기본적으로 닫혀 있고, JavaScript에서 showModal()로 엽니다. */
-dialog {
-  border: 0;
-  background: #fff;
-  border-radius: 12px;
-  padding: 16px;
-  width: calc(100% - 32px);
-  max-width: 560px;
-  color: var(--ink);
-}
-
-/* 팝업 뒤의 어두운 배경입니다. 배경을 눌러 닫는 동작은 main.js에서 처리합니다. */
-dialog::backdrop {
-  background: #302425d9;
-}
-
-
-/* 02. 잠깐 나타나는 안내 메시지 : 주소 복사 등의 결과를 화면 아래에 보여 줍니다. */
-
+/* 잠깐 나타나는 안내 메시지 : 주소 복사 등의 결과를 화면 아래에 보여 줍니다. */
 .toast {
   position: fixed; bottom: 25px; left: 50%;
   transform: translateX(-50%);
@@ -35,7 +17,6 @@ dialog::backdrop {
 }
 
 /* hidden 속성이 있으면 다른 display 설정과 관계없이 숨깁니다. */
-
 .toast[hidden],[hidden] {
   display: none!important;
 }
