@@ -3,7 +3,6 @@
 
 
 /* 01. 공통 색상과 글꼴 : 전체 분위기를 바꾸려면 이 색상부터 수정하세요. var(--pink)는 아래 --pink 값을 사용합니다.*/
-
 :root {
   --ink: #625653;
   --muted: #9f8b88;
@@ -14,7 +13,6 @@
 }
 
 /* 02. 기본 설정 : box-sizing은 테두리와 여백을 포함하여 너비를 계산하도록 합니다. */
-
 * {
   box-sizing: border-box;
 }
@@ -56,7 +54,6 @@ button:focus-visible,a:focus-visible {
 
 /* 03. 페이지의 폭과 구역 간격 : 큰 모니터에서도 청첩장은 최대 440px로 표시합니다.
  * section의 padding은 구역 안쪽의 위아래 / 좌우 여백입니다. */
-
 main {
   max-width: 440px;
   margin: auto;
@@ -72,7 +69,6 @@ section {
 }
 
 /* 04. 여러 구역에서 함께 쓰는 제목과 글자 : eyebrow는 WEDDING INVITATION처럼 작은 영문 제목에 쓰입니다. */
-
 .eyebrow {
   font: 11px Georgia,serif;
   letter-spacing: 2px;
@@ -97,8 +93,7 @@ p {
 
 /* 05. 첫 화면: 이름과 대표 사진
  * 사진의 모서리 모양은 .cover의 border-radius에서 바꿀 수 있습니다.
- * 벚꽃의 위치와 움직임은 effects.css에서 관리합니다.
- */
+ * 벚꽃의 위치와 움직임은 effects.css에서 관리합니다. */
 
 .hero {
   padding: 44px 22px 60px;
@@ -198,10 +193,8 @@ p {
   border: 0;
 }
 
-/*
- * 07. 연분홍 배경과 예식 날짜
- * HTML에 class="pink"가 붙은 구역은 같은 배경색을 사용합니다.
- */
+/* 07. 연분홍 배경과 예식 날짜
+ * HTML에 class="pink"가 붙은 구역은 같은 배경색을 사용합니다. */
 
 .pink {
   background: var(--pale);
