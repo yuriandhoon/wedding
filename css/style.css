@@ -258,7 +258,7 @@ p {
 
 .time small {
   font: 11px Georgia,serif;
-  letter-spacing: 1.5px;
+  letter-spacing: 0.5px;
   color: var(--muted);
 }
 
