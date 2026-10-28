@@ -8,8 +8,8 @@ const CONFIG = {
 
   // 01. 신랑, 신부 정보
   // name: 한글 이름 / english: 영문 이름 / parents: 부모님 소개 문구
-  "groom": {"name": "최지훈", "english": "JIHOON CHOI", "parents": "최진오·배순득의 아들"},
-  "bride": {"name": "정유리", "english": "YURI JUNG", "parents": "정영균·김명숙의 딸"},
+  "groom": {"name": "최지훈", "parents": "최진오·배순득의 아들"},
+  "bride": {"name": "정유리", "parents": "정영균·김명숙의 딸"},
 
   // 02. 예식 날짜와 시간
   // 형식: 연-월-일T시:분:초+09:00 / 날짜를 바꾸면 표지와 카운트다운이 함께 바뀝니다.
