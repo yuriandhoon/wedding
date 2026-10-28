@@ -131,8 +131,8 @@ const Wedding = (() => {
     // 지도는 청첩장 안에 삽입하지 않고 각각의 지도 서비스에서 엽니다.
     const links = [
       ['네이버 지도', CONFIG.venue.naverMapUrl || 'https://map.naver.com/p/search/' + query],
-      ['카카오맵', 'https://map.kakao.com/?q=' + query],
-      ['구글 지도', 'https://www.google.com/maps/search/?api=1&query=' + query]
+      ['카카오맵', CONFIG.venue.kakaoMapUrl || 'https://map.kakao.com/?q=' + query],
+      ['티맵', CONFIG.venue.tmapUrl]
     ];
 
     for (const [label, url] of links) {
