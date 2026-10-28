@@ -231,11 +231,10 @@ p {
 
 .date-display span {
   font-size: 15px;
-  letter-spacing: 1px;
 }
 
 .date-sub {
-  font-size: 15px;
+  font-size: 14px;
   color: #b78d99;
   margin: 10px 0 30px;
 }
@@ -258,7 +257,7 @@ p {
 }
 
 .time small {
-  font: 8px Georgia,serif;
+  font: 11px Georgia,serif;
   letter-spacing: 1.5px;
   color: var(--muted);
 }
