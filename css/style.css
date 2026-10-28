@@ -100,14 +100,24 @@ p {
 }
 
 .hero h1 {
+  /* 이름과 &를 한 줄에 나란히 배치합니다. */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+
   font-size: 34px;
-  letter-spacing: 7px;
+  letter-spacing: 2px;
   line-height: 1.55;
   margin: 20px 0 30px;
 }
 
+/* 각 이름이 중간에서 줄바꿈되지 않도록 합니다. */
+.hero h1 > span {
+  white-space: nowrap;
+}
+
 .amp {
-  display: block;
   color: var(--pink);
   font: italic 26px Georgia,serif;
   letter-spacing: 0;
