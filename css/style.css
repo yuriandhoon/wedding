@@ -307,12 +307,24 @@ p {
 
 .gallery-main {
   display: block;
-  width: 100%;
+
+  /* 부모 영역 너비의 90%로 표시합니다. */
+  width: 90%;
   aspect-ratio: 2 / 3;
   object-fit: cover;
   border-radius: 12px;
-  margin: 25px 0 20px;
-  cursor: pointer;
+
+  /* 좌우 auto로 작아진 사진을 가운데 정렬합니다. */
+  margin: 25px auto 20px;
+
+  /* 세로 페이지 스크롤과 두 손가락 확대는 허용합니다. */
+  touch-action: pan-y pinch-zoom;
+  user-select: none;
+  cursor: grab;
+}
+
+.gallery-main:active {
+  cursor: grabbing;
 }
 
 .gallery-grid {
