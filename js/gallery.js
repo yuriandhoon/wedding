@@ -8,7 +8,7 @@
   "use strict";
 
   // main.js에서 만든 공통 도구를 가져옵니다.
-  const { $, createPhoto, openDialog } = Wedding;
+  const { $, createPhoto } = Wedding;
 
   let currentPhoto = 0;
   
@@ -18,12 +18,6 @@
   
     $('galleryMain').src = src;
     $('galleryMain').alt = `웨딩 사진 ${currentPhoto + 1}`;
-  
-    // 기존 확대 팝업에서도 같은 사진을 보여 줍니다.
-    $('largePhoto').src = src;
-    $('largePhoto').alt = `웨딩 사진 ${currentPhoto + 1}`;
-    $('photoCount').textContent =
-      `${currentPhoto + 1} / ${CONFIG.photos.length}`;
   
     const strip = $('gallery');
     const buttons = strip.querySelectorAll('.thumb');
@@ -86,17 +80,13 @@
     showPhoto();
   }
   
-  $('galleryMain').onclick = () => openDialog($('lightbox'));
-  
-  // 아래부터는 index.html의 각 버튼과 실제 동작을 연결합니다.
-  $('closeLightbox').onclick = () => $('lightbox').close();
-  $('previousPhoto').onclick = () => movePhoto(-1);
-  $('nextPhoto').onclick = () => movePhoto(1);
-
-  const stage = $("lightboxStage");
-  let touchStartX = null;
-  let lastWheelTime = 0;
-  
+  // 큰 사진의 왼쪽을 누르면 이전, 오른쪽을 누르면 다음 사진
+  $('galleryMain').onclick = (event) => {
+    const rect = event.currentTarget.getBoundingClientRect();
+    const direction = event.clientX < rect.left + rect.width / 2 ? -1 : 1;
+    movePhoto(direction);
+  };
+    
   // 휴대폰: 왼쪽으로 밀면 다음 사진, 오른쪽으로 밀면 이전 사진
   stage.addEventListener("touchstart", (event) => {
     touchStartX = event.changedTouches[0].clientX;
@@ -128,11 +118,7 @@
   
     movePhoto(distance > 0 ? 1 : -1);
   }, { passive: false });
-    
-  $('lightbox').addEventListener('keydown', (event) => {
-    if (event.key === 'ArrowLeft') movePhoto(-1);
-    if (event.key === 'ArrowRight') movePhoto(1);
-  });
+
   // 페이지를 처음 열었을 때도 한 번 그립니다.
   renderGallery();
 })();
