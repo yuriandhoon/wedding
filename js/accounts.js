@@ -1,7 +1,6 @@
-/*
- * accounts.js — 양가 계좌 순회, 계좌 팝업, 복사 버튼
- * 실제 계좌 정보는 config.js의 accounts에서만 수정하세요.
- * 팝업의 모양은 css/popup.css, HTML 틀은 index.html 하단에 있습니다.
+/* accounts.js — 양가 접이식 계좌 목록과 복사 버튼
+ * 실제 계좌 정보는 config.js의 accounts에서 수정합니다.
+ * 목록의 디자인은 css/style.css에서 관리합니다.
  */
 
 (() => {
@@ -9,7 +8,6 @@
 
   // main.js에 이미 있는 복사 기능을 사용합니다.
   const { copy } = Wedding;
-  const groups = document.querySelectorAll(".account-group");
 
   // config.js의 신랑측·신부측 계좌를 각각 해당 목록에 넣습니다.
   for (const side of ["groom", "bride"]) {
