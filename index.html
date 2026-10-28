@@ -101,15 +101,22 @@
       <!-- 04. 가족 소개 : 동일한 data-bind가 여러 곳에 있어도 설정 한 곳에서 함께 바뀝니다. -->
       <section class="family">
         <p class="eyebrow">WITH OUR FAMILIES</p>
-        <p class="role">GROOM</p>
-        <h3 data-bind="groom.name"></h3>
-        <p class="english" data-bind="groom.english"></p>
-        <p class="parents" data-bind="groom.parents"></p>
-        <div class="divider"></div>
-        <p class="role">BRIDE</p>
-        <h3 data-bind="bride.name"></h3>
-        <p class="english" data-bind="bride.english"></p>
-        <p class="parents" data-bind="bride.parents"></p>
+      
+        <div class="family-grid">
+          <!-- 왼쪽: 신랑 -->
+          <div class="family-person">
+            <p class="role">GROOM</p>
+            <h3 data-bind="groom.name"></h3>
+            <p class="parents" data-bind="groom.parents"></p>
+          </div>
+      
+          <!-- 오른쪽: 신부 -->
+          <div class="family-person">
+            <p class="role">BRIDE</p>
+            <h3 data-bind="bride.name"></h3>
+            <p class="parents" data-bind="bride.parents"></p>
+          </div>
+        </div>
       </section>
 
       <!-- 05. 사진 갤러리 : gallery.js가 config.js의 photos 목록으로 사진 버튼을 만듭니다. -->
