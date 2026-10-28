@@ -310,8 +310,7 @@ p {
 
   /* 부모 영역 너비의 90%로 표시합니다. */
   width: 90%;
-  aspect-ratio: 2 / 3;
-  object-fit: cover;
+  height: auto;
   border-radius: 12px;
 
   /* 좌우 auto로 작아진 사진을 가운데 정렬합니다. */
