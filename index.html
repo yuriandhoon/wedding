@@ -173,21 +173,6 @@
       </section>
     </main>
 
-    <!-- 사진 확대 팝업: 기본 상태는 닫힘. gallery.js에서 사진을 누르면 엽니다. -->
-    <dialog id="lightbox" aria-label="웨딩 사진 크게 보기">
-      <div class="modal-top">
-        <span id="photoCount"></span>
-        <button id="closeLightbox" aria-label="사진 닫기">닫기 ×</button>
-      </div>
-      <div class="lightbox-stage" id="lightboxStage">
-        <img class="modal-image" id="largePhoto" alt="">
-        <button class="photo-half photo-half-left" id="previousPhoto"
-                type="button" aria-label="이전 사진"></button>
-        <button class="photo-half photo-half-right" id="nextPhoto"
-                type="button" aria-label="다음 사진"></button>
-      </div>
-    </dialog>
-
     <!-- 복사 등의 결과를 잠깐 보여 주는 공통 안내 메시지입니다. -->
     <div class="toast" id="toast" role="status" hidden></div>
   </body>
