@@ -17,7 +17,6 @@
 }
 
 /* hidden 속성이 있으면 다른 display 설정과 관계없이 숨깁니다. */
-.toast[hidden],[hidden] {
-  display: none!important;
+[hidden] {
+  display: none !important;
 }
-
