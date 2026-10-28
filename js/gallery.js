@@ -45,11 +45,8 @@
   
     if (!CONFIG.photos.length) {
       $('galleryMain').hidden = true;
-      $('galleryHint').textContent = '사진을 준비 중입니다.';
       return;
     }
-  
-    $('galleryHint').textContent = '작은 사진을 선택하거나 큰 사진을 눌러 보세요.';
   
     CONFIG.photos.forEach((src, index) => {
       const button = document.createElement('button');
