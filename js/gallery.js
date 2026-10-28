@@ -81,56 +81,49 @@
     currentPhoto = (currentPhoto + direction + CONFIG.photos.length) % CONFIG.photos.length;
     showPhoto();
   }
-  
-  // 큰 사진의 왼쪽을 누르면 이전, 오른쪽을 누르면 다음 사진
-  $('galleryMain').onclick = (event) => {
-    const rect = event.currentTarget.getBoundingClientRect();
-    const direction = event.clientX < rect.left + rect.width / 2 ? -1 : 1;
-    movePhoto(direction);
-  };
-  
-  // 팝업 대신 본문에 있는 큰 사진에 터치·휠 기능을 연결합니다.
-  const stage = $('galleryMain');
-  let touchStartX = null;
-  let lastWheelTime = 0;
-  
-  // 휴대폰: 왼쪽으로 밀면 다음 사진, 오른쪽으로 밀면 이전 사진
-  stage.addEventListener("touchstart", (event) => {
-    touchStartX = event.changedTouches[0].clientX;
-  }, { passive: true });
-  
-  stage.addEventListener("touchend", (event) => {
-    if (touchStartX === null) return;
-  
-    const distance = event.changedTouches[0].clientX - touchStartX;
-    touchStartX = null;
-  
-    if (Math.abs(distance) < 45) return;
-    event.preventDefault(); // 밀기를 클릭으로도 처리하지 않도록 함
-    movePhoto(distance < 0 ? 1 : -1);
-  }, { passive: false });
-  
-  // 컴퓨터: 사진 위에서 휠을 굴려 이동
-  stage.addEventListener("wheel", (event) => {
-    // 일반 세로 스크롤은 페이지 이동에 사용합니다.
-    // 가로 스크롤 또는 Shift + 휠일 때만 사진을 넘깁니다.
-    if (!event.shiftKey && Math.abs(event.deltaX) <= Math.abs(event.deltaY)) {
-      return;
-    }
-    const distance = Math.abs(event.deltaX) > Math.abs(event.deltaY)
-      ? event.deltaX
-      : event.deltaY;
-  
-    if (Math.abs(distance) < 20) return;
-    event.preventDefault();
-  
-    // 휠 한 번에 여러 장이 연속으로 넘어가지 않도록 제한
-    if (Date.now() - lastWheelTime < 450) return;
-    lastWheelTime = Date.now();
-  
-    movePhoto(distance > 0 ? 1 : -1);
-  }, { passive: false });
 
+  // 큰 사진을 좌우로 밀어서 넘깁니다.
+  const stage = $('galleryMain');
+  
+  let startX = null;
+  let startY = null;
+  
+  // 손가락 또는 마우스를 누른 위치를 기억합니다.
+  stage.addEventListener('pointerdown', (event) => {
+    // 첫 번째 손가락 또는 마우스 왼쪽 버튼만 처리합니다.
+    if (!event.isPrimary || event.button !== 0) return;
+  
+    startX = event.clientX;
+    startY = event.clientY;
+  
+    // 사진 밖에서 손을 놓더라도 이동 종료를 감지합니다.
+    stage.setPointerCapture(event.pointerId);
+  });
+  
+  // 손가락 또는 마우스를 놓으면 이동 방향을 판단합니다.
+  stage.addEventListener('pointerup', (event) => {
+    if (startX === null) return;
+  
+    const distanceX = event.clientX - startX;
+    const distanceY = event.clientY - startY;
+  
+    startX = null;
+    startY = null;
+  
+    // 짧은 터치나 세로 이동은 사진 넘기기로 처리하지 않습니다.
+    if (Math.abs(distanceX) < 40) return;
+    if (Math.abs(distanceX) <= Math.abs(distanceY)) return;
+  
+    // 왼쪽으로 밀면 다음 사진, 오른쪽으로 밀면 이전 사진
+    movePhoto(distanceX < 0 ? 1 : -1);
+  });
+  
+  // 페이지 스크롤 등으로 조작이 취소되면 기록을 비웁니다.
+  stage.addEventListener('pointercancel', () => {
+    startX = null;
+    startY = null;
+  });
+  
   // 페이지를 처음 열었을 때도 한 번 그립니다.
   renderGallery();
 })();
