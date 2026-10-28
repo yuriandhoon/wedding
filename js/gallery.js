@@ -76,6 +76,8 @@
   
   // %는 나머지 연산입니다. 마지막 사진 다음에는 첫 사진, 첫 사진 이전에는 마지막 사진으로 이동합니다.
   function movePhoto(direction) {
+    if (!CONFIG.photos.length) return;
+  
     currentPhoto = (currentPhoto + direction + CONFIG.photos.length) % CONFIG.photos.length;
     showPhoto();
   }
@@ -86,7 +88,12 @@
     const direction = event.clientX < rect.left + rect.width / 2 ? -1 : 1;
     movePhoto(direction);
   };
-    
+  
+  // 팝업 대신 본문에 있는 큰 사진에 터치·휠 기능을 연결합니다.
+  const stage = $('galleryMain');
+  let touchStartX = null;
+  let lastWheelTime = 0;
+  
   // 휴대폰: 왼쪽으로 밀면 다음 사진, 오른쪽으로 밀면 이전 사진
   stage.addEventListener("touchstart", (event) => {
     touchStartX = event.changedTouches[0].clientX;
@@ -105,6 +112,11 @@
   
   // 컴퓨터: 사진 위에서 휠을 굴려 이동
   stage.addEventListener("wheel", (event) => {
+    // 일반 세로 스크롤은 페이지 이동에 사용합니다.
+    // 가로 스크롤 또는 Shift + 휠일 때만 사진을 넘깁니다.
+    if (!event.shiftKey && Math.abs(event.deltaX) <= Math.abs(event.deltaY)) {
+      return;
+    }
     const distance = Math.abs(event.deltaX) > Math.abs(event.deltaY)
       ? event.deltaX
       : event.deltaY;
