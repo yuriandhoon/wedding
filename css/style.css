@@ -424,12 +424,12 @@ p {
 /* 11. 마음 전하실 곳: 계좌 목록 */
 
 .account {
-  padding-top: 60px;
+  padding: 64px;
   background: #fff;
 }
 
 .account h2 {
-  margin-bottom: 18px;
+  margin-bottom: 20px;
 }
 
 .account .intro {
