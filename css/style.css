@@ -600,8 +600,3 @@ p {
 .account-copy:disabled {
   opacity: .45;
 }
-
-/* 가로 화면 보기 */
-@media (orientation: landscape) and (hover: none) and (pointer: coarse) {
-  width: 100%;
-}
