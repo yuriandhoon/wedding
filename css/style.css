@@ -208,6 +208,7 @@ p {
 
 .pink {
   background: var(--pale);
+  padding-top: 50px;
 }
 
 .date {
