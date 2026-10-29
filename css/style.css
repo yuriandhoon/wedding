@@ -482,8 +482,15 @@ p {
   border-bottom: 1px solid var(--line);
 }
 
-.account-group[open] summary::after {
+.account-group.is-expanded summary::after {
   transform: translateY(-50%) rotate(225deg);
+}
+
+/* 화살표도 열고 닫는 방향으로 부드럽게 회전합니다. */
+@media (prefers-reduced-motion: no-preference) {
+  .account-group summary::after {
+    transition: transform 0.28s ease;
+  }
 }
 
 .account-row {
