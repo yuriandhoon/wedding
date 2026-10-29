@@ -11,6 +11,9 @@
   const { $, createPhoto } = Wedding;
 
   let currentPhoto = 0;
+  // 사진이 이동하는 동안 중복 조작을 막습니다.
+  let photoMoving = false;
+
   
   // 큰 사진과 선택된 썸네일을 함께 갱신합니다.
   function showPhoto() {
@@ -62,6 +65,7 @@
   
       button.append(image);
       button.onclick = () => {
+        if (photoMoving) return;
         currentPhoto = index;
         showPhoto();
       };
@@ -72,11 +76,63 @@
   }
   
   // %는 나머지 연산입니다. 마지막 사진 다음에는 첫 사진, 첫 사진 이전에는 마지막 사진으로 이동합니다.
-  function movePhoto(direction) {
-    if (!CONFIG.photos.length) return;
+  async function movePhoto(direction) {
+    if (photoMoving || CONFIG.photos.length < 2) return;
   
-    currentPhoto = (currentPhoto + direction + CONFIG.photos.length) % CONFIG.photos.length;
-    showPhoto();
+    photoMoving = true;
+  
+    const image = $('galleryMain');
+    const frame = $('galleryFrame');
+    const previousIndex = currentPhoto;
+  
+    // 이전 사진을 복사해 현재 사진 위에 잠시 겹칩니다.
+    const previousImage = image.cloneNode();
+    previousImage.removeAttribute('id');
+    previousImage.className = 'gallery-outgoing';
+    previousImage.alt = '';
+    previousImage.setAttribute('aria-hidden', 'true');
+  
+    // 전환 중에는 사진 영역의 높이가 흔들리지 않게 합니다.
+    frame.style.height = `${frame.getBoundingClientRect().height}px`;
+    frame.append(previousImage);
+  
+    try {
+      currentPhoto =
+        (currentPhoto + direction + CONFIG.photos.length) % CONFIG.photos.length;
+  
+      showPhoto();
+  
+      // 다음 사진을 화면에 표시할 준비가 된 후 움직입니다.
+      await image.decode();
+  
+      const options = {
+        duration: window.matchMedia('(prefers-reduced-motion: reduce)').matches
+          ? 0
+          : 320,
+        easing: 'ease-out'
+      };
+  
+      // 이전 사진은 밖으로, 다음 사진은 안으로 동시에 이동합니다.
+      await Promise.all([
+        previousImage.animate([
+          { transform: 'translateX(0)' },
+          { transform: `translateX(${-direction * 100}%)` }
+        ], options).finished,
+  
+        image.animate([
+          { transform: `translateX(${direction * 100}%)` },
+          { transform: 'translateX(0)' }
+        ], options).finished
+      ]);
+    } catch {
+      currentPhoto = previousIndex;
+      showPhoto();
+      Wedding.notify('사진을 불러오지 못했습니다.');
+    } finally {
+      previousImage.remove();
+      frame.style.height = '';
+      photoMoving = false;
+    }
   }
 
   // 큰 사진을 좌우로 밀어서 넘깁니다.
