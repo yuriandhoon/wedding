@@ -536,6 +536,12 @@ p {
   border-radius: 30px;
   color: #fff;
   white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  font: inherit;
+  text-decoration: none;
 }
 
 .calendar-options {
