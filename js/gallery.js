@@ -1,6 +1,4 @@
-/*
- * gallery.js
- *
+/* gallery.js
  * 큰 사진: 손가락으로 가로 스크롤
  * 작은 사진: 선택하면 해당 큰 사진으로 이동
  * 사진 목록: config.js의 photos에서 수정
@@ -8,9 +6,8 @@
 
 (() => {
   "use strict";
-
+  
   const { $, createPhoto } = Wedding;
-
   const frame = $("galleryFrame");
   const strip = $("gallery");
   const photos = CONFIG.photos;
