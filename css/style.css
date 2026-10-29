@@ -55,6 +55,7 @@ button:focus-visible,a:focus-visible {
 /* 03. 페이지의 폭과 구역 간격 : 큰 모니터에서도 청첩장은 최대 440px로 표시합니다.
  * section의 padding은 구역 안쪽의 위아래 / 좌우 여백입니다. */
 main {
+  width: 100%;
   max-width: 440px;
   margin: auto;
   background: #fff;
@@ -658,4 +659,9 @@ p {
 
 .account-copy:disabled {
   opacity: .45;
+}
+
+/* 가로 화면 보기 */
+@media (orientation: landscape) and (hover: none) and (pointer: coarse) {
+  width: 100%;
 }
