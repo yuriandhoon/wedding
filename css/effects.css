@@ -90,18 +90,14 @@
 }
 
 /* 05. 휴대폰이나 컴퓨터의 “동작 줄이기” 설정 존중 : 이 설정을 켠 방문자에게는 꽃잎과 등장 동작을 생략하고 내용을 바로 보여 줍니다. */
-
-@media(prefers-reduced-motion:reduce) {
-  .petal {
-    animation: none;
-    display: none;
-  }
-}
-
-@media(prefers-reduced-motion:reduce) {
+/* 기기의 '동작 줄이기' 설정이 켜져 있으면 효과를 생략합니다. */
+@media (prefers-reduced-motion: reduce) {
+  /* 꽃잎 전체를 감싸는 공간을 숨깁니다. */
   .petals {
     display: none;
   }
+
+  /* 등장 애니메이션 없이 내용을 바로 표시합니다. */
   .reveal {
     opacity: 1;
     transform: none;
