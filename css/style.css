@@ -19,6 +19,7 @@
 
 body {
   margin: 0;
+  padding: 40px;
   background: #f0eae8;
   color: var(--ink);
   font-family: 'Noto Sans KR', 'Malgun Gothic', sans-serif;
@@ -65,7 +66,7 @@ main {
 
 section {
   position: relative;
-  padding: 200px 30px;
+  padding: 70px 30px;
   text-align: center;
 }
 
