@@ -18,7 +18,7 @@
 }
 
 body {
-  margin-top: 40;
+  margin: 0;
   background: #f0eae8;
   color: var(--ink);
   font-family: 'Noto Sans KR', 'Malgun Gothic', sans-serif;
