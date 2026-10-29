@@ -308,10 +308,6 @@ p {
   touch-action: auto;
 }
 
-.gallery-main:active {
-  cursor: grabbing;
-}
-
 .gallery-grid {
   display: flex;
   gap: 8px;
@@ -470,7 +466,6 @@ p {
 }
 
 .closing-actions .outline {
-  width: 100%;
   margin: 0;
   padding: 10px 6px;
   border-color: #f3d3dc;
@@ -480,9 +475,7 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
-  box-sizing: border-box;
   font: inherit;
-  text-decoration: none;
 }
 
 .calendar-options {
