@@ -123,10 +123,15 @@
       <section class="gallery">
         <p class="eyebrow">GALLERY</p>
         <h2>우리의 이야기</h2>
-        <!-- 현재 선택한 큰 사진 -->
-        <div class="gallery-frame" id="galleryFrame">
-          <img class="gallery-main" id="galleryMain" alt="" draggable="false">
-        </div>
+        <!-- 큰 사진들을 가로로 배치할 공간입니다.
+             사진은 gallery.js가 config.js의 photos를 읽어서 넣습니다. -->
+        <div
+          class="gallery-frame"
+          id="galleryFrame"
+          role="region"
+          aria-label="웨딩 사진"
+          tabindex="0"
+        ></div>
         <!-- 가로로 스크롤하는 작은 사진 목록 -->
         <div class="gallery-grid" id="gallery" aria-label="웨딩 사진 목록"></div>
       </section>
