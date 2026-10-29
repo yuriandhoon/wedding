@@ -97,7 +97,7 @@ p {
  * 사진의 모서리 모양은 .cover의 border-radius에서 바꿀 수 있습니다.
  * 벚꽃의 위치와 움직임은 effects.css에서 관리합니다. */
 .hero {
-  padding: 60px 22px 50px;
+  padding: 50px 22px 50px;
 }
 
 .hero h1 {
@@ -177,7 +177,7 @@ p {
 
 /* 06. 초대글 */
 .invitation {
-  padding: 60px 20px 80px;
+  padding: 70px 20px 70px;
 }
 
 /* 첫 화면과 초대글 사이의 부드러운 구분선 */
@@ -211,8 +211,8 @@ p {
 }
 
 .date {
-  padding-top: 60px;
-  padding-bottom: 65px;
+  padding-top: 50px;
+  padding-bottom: 70px;
 }
 
 .date-display {
@@ -263,7 +263,7 @@ p {
 
 /* 08. 사진 갤러리 : 큰 사진과 스크롤 썸네일 */
 .gallery {
-  padding: 60px 22px 80px;
+  padding: 70px 22px 80px;
 }
 
 .gallery h2 {
