@@ -97,7 +97,7 @@ p {
  * 사진의 모서리 모양은 .cover의 border-radius에서 바꿀 수 있습니다.
  * 벚꽃의 위치와 움직임은 effects.css에서 관리합니다. */
 .hero {
-  padding: 50px 22px 50px;
+  padding: 44px 22px 50px;
 }
 
 .hero h1 {
