@@ -387,7 +387,7 @@ p {
 }
 
 .location {
-  padding-bottom: 35px;
+  padding-bottom: 24px;
 }
 
 /* 대중교통과 주차 안내는 왼쪽 정렬로 읽기 쉽게 표시합니다. */
@@ -401,6 +401,11 @@ p {
 .transport article {
   padding: 24px 0;
   border-bottom: 1px solid var(--line);
+}
+
+.transport article:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
 }
 
 .transport h3 {
@@ -420,7 +425,7 @@ p {
 /* 11. 마음 전하실 곳: 계좌 목록 */
 
 .account {
-  padding-top: 30px;
+  padding-top: 50px;
   background: #fff;
 }
 
