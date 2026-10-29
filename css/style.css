@@ -452,13 +452,13 @@ p {
 }
 
 .closing h2 {
-  font-size: 23px;
+  font-size: 22px;
   margin-bottom: 22px;
 }
 
 .closing p {
   font-family: var(--serif);
-  font-size: 14px;
+  font-size: 10px;
   line-height: 2.2;
 }
 
