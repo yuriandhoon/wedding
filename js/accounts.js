@@ -99,7 +99,7 @@
           { height: endHeight + "px" }
         ],
         {
-          duration: 280,
+          duration: 350,
           easing: "cubic-bezier(.25, .8, .25, 1)",
           fill: "both"
         }
