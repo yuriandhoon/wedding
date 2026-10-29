@@ -305,37 +305,67 @@ p {
 }
 
 /* 사진 크기와 바깥 여백은 이제 이 틀에서 조정합니다. */
+/* 큰 사진을 가로로 넘기는 공간 */
 .gallery-frame {
   position: relative;
+
+  /* 사진 크기: 더 작게 하려면 90%를 85% 등으로 줄이세요. */
   width: 90%;
   margin: 25px auto 20px;
-  overflow: hidden;
-  border-radius: 12px;
+
+  /* 사진을 세로가 아닌 가로로 나란히 배치합니다. */
+  display: flex;
+  align-items: flex-start;
+
+  /* 넘기는 도중 보이는 사진 사이의 간격 */
+  gap: 24px;
+
+  /* 가로 방향으로 실제 스크롤되도록 합니다. */
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  /* 손을 떼면 사진 위치에 맞춰 멈춥니다. */
+  scroll-snap-type: x mandatory;
+
+  /* 갤러리 끝에서 가로 스크롤이 바깥으로 이어지는 것을 제한합니다. */
+  overscroll-behavior-x: contain;
+
+  /* 가로·세로 터치 동작과 확대를 브라우저가 처리하게 합니다. */
+  touch-action: auto;
+
+  /* 스크롤바만 숨기고 스크롤 기능은 유지합니다. */
+  scrollbar-width: none;
 }
 
+.gallery-frame::-webkit-scrollbar {
+  display: none;
+}
+
+/* 가로로 배치되는 각각의 큰 사진 */
 .gallery-main {
   display: block;
+
+  /* 사진 한 장이 갤러리 공간의 너비를 차지하도록 합니다. */
+  flex: 0 0 100%;
+  min-width: 0;
   width: 100%;
   height: auto;
   margin: 0;
 
-  touch-action: pan-y pinch-zoom;
-  user-select: none;
-  cursor: grab;
-}
+  /* 사진을 표시하는 공간의 비율 */
+  aspect-ratio: 2 / 3;
 
-.gallery-main:active {
-  cursor: grabbing;
-}
-
-/* 전환하는 동안만 잠시 겹쳐 놓는 이전 사진입니다. */
-.gallery-outgoing {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
+  /* 원본 사진을 자르지 않고 공간 안에 표시합니다. */
   object-fit: contain;
-  pointer-events: none;
+
+  border-radius: 12px;
+
+  /* 각 사진을 멈추는 기준점으로 사용합니다. */
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+
+  user-select: none;
+  touch-action: auto;
 }
 
 .gallery-main:active {
