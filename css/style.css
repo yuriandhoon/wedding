@@ -19,7 +19,7 @@
 
 body {
   margin: 0;
-  padding: 40px;
+  padding-top: 40px;
   background: #f0eae8;
   color: var(--ink);
   font-family: 'Noto Sans KR', 'Malgun Gothic', sans-serif;
