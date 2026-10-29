@@ -444,7 +444,7 @@ p {
 /* 신랑측·신부측 접이식 계좌 목록 */
 .account-group {
   margin-top: 12px;
-  margin-bottom: 12px;
+  margin-bottom: 15px;
   overflow: hidden;
   border: 1px solid var(--line);
   border-radius: 12px;
