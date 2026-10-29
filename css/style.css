@@ -388,7 +388,8 @@ p {
 }
 
 .location {
-  padding-bottom: 24px;
+  padding-top: 10px;
+  padding-bottom: 30px;
 }
 
 /* 대중교통과 주차 안내는 왼쪽 정렬로 읽기 쉽게 표시합니다. */
