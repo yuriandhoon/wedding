@@ -183,16 +183,12 @@
         <p>
           귀한 걸음으로 축복해 주시는 마음,<br>오래도록 기억하며 행복하게 살겠습니다.
         </p>
-        <div class="closing-actions">
-          <button class="outline" id="addCalendar" type="button"
-                  aria-expanded="false" aria-controls="calendarOptions">
-            일정 추가하기
-          </button>
-        
-          <button class="outline" id="share" type="button">
-            청첩장 공유하기
-          </button>
-        </div>
+          <div class="closing-actions">
+            <!-- 일정 파일을 휴대전화에서 열도록 연결합니다. -->
+            <a href="./wedding.ics" class="outline" id="addCalendar" type="text/calendar">일정 추가하기</a>
+            <button class="outline" id="share" type="button">청첩장 공유하기</button>
+          </div>
+      </div>
         
         <!-- 일정 추가 버튼을 누르면 나타나는 선택지 -->
         <div class="calendar-options" id="calendarOptions" hidden>
