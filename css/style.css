@@ -391,7 +391,6 @@ p {
 }
 
 /* 대중교통과 주차 안내는 왼쪽 정렬로 읽기 쉽게 표시합니다. */
-
 .transport {
   text-align: left;
   margin-top: 30px;
@@ -405,7 +404,7 @@ p {
 
 .transport article:last-child {
   border-bottom: 0;
-  padding-bottom: 0;
+  padding-bottom: 20;
 }
 
 .transport h3 {
