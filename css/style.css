@@ -436,67 +436,7 @@ p {
   font-size: 12px;
   line-height: 2;
   color: var(--muted);
-}
-
-/* 12. 마지막 감사 인사와 공유 버튼 */
-
-.closing {
-  padding: 65px 28px;
-  background: #e7a9ba;
-  color: #fff;
-}
-
-.closing .eyebrow {
-  color: #fff;
-  opacity: .8;
-}
-
-.closing h2 {
-  font-size: 22px;
-  margin-bottom: 22px;
-}
-
-.closing p {
-  font-family: var(--serif);
-  font-size: 10px;
-  line-height: 2.2;
-}
-
-.closing-actions {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 10px;
-  margin-top: 26px;
-}
-
-.closing-actions .outline {
-  margin: 0;
-  padding: 10px 6px;
-  border-color: #f3d3dc;
-  border-radius: 30px;
-  color: #fff;
-  white-space: nowrap;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font: inherit;
-}
-
-/* 13. 작은 휴대폰 화면
- * 화면 너비가 350px 이하이면 좌우 여백과 큰 글자 크기를 줄입니다.
- */
-
-@media(max-width:350px) {
-  section {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-  .date-display strong {
-    font-size: 44px;
-  }
-  .hero h1 {
-    font-size: 30px;
-  }
+  padding-bottom: 20px;
 }
 
 /* 신랑측·신부측 접이식 계좌 목록 */
@@ -583,4 +523,65 @@ p {
 
 .account-copy:disabled {
   opacity: .45;
+}
+
+/* 12. 마지막 감사 인사와 공유 버튼 */
+
+.closing {
+  padding: 65px 28px;
+  background: #e7a9ba;
+  color: #fff;
+}
+
+.closing .eyebrow {
+  color: #fff;
+  opacity: .8;
+}
+
+.closing h2 {
+  font-size: 22px;
+  margin-bottom: 22px;
+}
+
+.closing p {
+  font-family: var(--serif);
+  font-size: 14px;
+  line-height: 2.2;
+}
+
+.closing-actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 26px;
+}
+
+.closing-actions .outline {
+  margin: 0;
+  padding: 10px 6px;
+  border-color: #f3d3dc;
+  border-radius: 30px;
+  color: #fff;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font: inherit;
+}
+
+/* 13. 작은 휴대폰 화면
+ * 화면 너비가 350px 이하이면 좌우 여백과 큰 글자 크기를 줄입니다.
+ */
+
+@media(max-width:350px) {
+  section {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .date-display strong {
+    font-size: 44px;
+  }
+  .hero h1 {
+    font-size: 30px;
+  }
 }
