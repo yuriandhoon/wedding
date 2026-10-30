@@ -102,7 +102,7 @@ p {
 
 /* 첫 화면의 '결혼합니다!'에만 적용합니다. */
 .hero-handwriting {
-  font-family: 'Nanum Brush Script', cursive;
+  font-family: 'Gaegu', cursive;
   font-size: 32px;
   font-weight: 400;
   line-height: 1.3;
