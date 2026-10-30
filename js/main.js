@@ -126,21 +126,23 @@ const Wedding = (() => {
     // 한글과 공백을 URL에 넣을 수 있는 형태로 바꿉니다.
     const query = encodeURIComponent(CONFIG.venue.search || CONFIG.venue.name);
     $('mapLinks').hidden = false;
-
+    
     // 네이버 공유 링크가 있으면 우선 사용합니다. 없으면 장소 이름으로 검색합니다.
     // 지도는 청첩장 안에 삽입하지 않고 각각의 지도 서비스에서 엽니다.
+    // 휴대전화에서는 티맵 앱으로, 컴퓨터에서는 기존 웹페이지로 연결합니다.
+    const useTmapApp = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+
     const links = [
       ['네이버 지도', CONFIG.venue.naverMapUrl || 'https://map.naver.com/p/search/' + query],
       ['카카오맵', CONFIG.venue.kakaoMapUrl || 'https://map.kakao.com/?q=' + query],
-      ['티맵', CONFIG.venue.tmapUrl]
-    ];
+      ['티맵', useTmapApp ? 'tmap://poi-detail?pkey=73515801' : CONFIG.venue.tmapUrl];
 
     for (const [label, url] of links) {
       const link = document.createElement('a');
       link.textContent = label;
       link.href = url;
-      // 새 탭으로 열고 현재 청첩장으로 돌아올 수 있게 합니다.
-      link.target = '_blank';
+      // 앱 연결은 현재 탭에서 요청하고, 웹페이지는 새 탭으로 엽니다.
+      link.target = url.startsWith('tmap://') ? '_self' : '_blank';
       link.rel = 'noopener noreferrer';
       $('mapLinks').append(link);
     }
