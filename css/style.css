@@ -363,6 +363,10 @@ p {
   margin-bottom: 0;
 }
 
+.location [data-bind="venue.name"] {
+  margin-bottom: 5px;
+}
+
 .map-illustration {
   display: block;
   width: 100%;
