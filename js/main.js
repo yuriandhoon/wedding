@@ -92,13 +92,6 @@ const Wedding = (() => {
       + (parts.minute === '00' ? '' : ':' + parts.minute)
       + ' ' + parts.dayPeriod;
 
-    $('ceremonyDate').textContent = new Intl.DateTimeFormat('ko-KR', {
-      timeZone: 'Asia/Seoul',
-      year: 'numeric', month: 'long', day: 'numeric',
-      weekday: 'long',
-      hour: 'numeric', minute: '2-digit'
-    }).format(wedding);
-
     // 남은 시간을 초로 계산한 뒤 일/시/분/초로 나눕니다.
     // 하루는 86,400초, 한 시간은 3,600초입니다. 과거 날짜는 0에서 멈춥니다.
     function tick() {
