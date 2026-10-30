@@ -128,7 +128,8 @@ const Wedding = (() => {
     const links = [
       ['네이버 지도', CONFIG.venue.naverMapUrl || 'https://map.naver.com/p/search/' + query],
       ['카카오맵', CONFIG.venue.kakaoMapUrl || 'https://map.kakao.com/?q=' + query],
-      ['티맵', useTmapApp ? 'tmap://poi-detail?pkey=73515801' : CONFIG.venue.tmapUrl];
+      ['티맵', useTmapApp ? 'tmap://poi-detail?pkey=73515801' : CONFIG.venue.tmapUrl]
+      ];
 
     for (const [label, url] of links) {
       const link = document.createElement('a');
