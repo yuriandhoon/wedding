@@ -17,8 +17,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500&amp;family=Noto+Serif+KR:wght@400;500&amp;display=swap">
-    <link rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Gaegu:wght@400&amp;family=Nanum+Brush+Script&amp;family=Nanum+Pen+Script&amp;display=swap">
     <!-- 디자인 파일: 기본 화면 → 팝업 → 애니메이션 순서로 읽습니다. -->
     <link rel="stylesheet" href="css/style.css">
@@ -35,7 +33,6 @@
     <script src="js/gallery.js" defer></script>
     <script src="js/accounts.js" defer></script>
     <script src="js/effects.js" defer></script>
-    <script src="js/calendar.js" defer></script>
   </head>
   <body>
     <!--
@@ -169,17 +166,6 @@
             <a href="./wedding.ics" class="outline" id="addCalendar" type="text/calendar">일정 추가하기</a>
             <button class="outline" id="share" type="button">청첩장 공유하기</button>
           </div>
-      </div>
-        
-        <!-- 일정 추가 버튼을 누르면 나타나는 선택지 -->
-        <div class="calendar-options" id="calendarOptions" hidden>
-          <a id="googleCalendar" target="_blank" rel="noopener noreferrer">
-            Google 캘린더
-          </a>
-          <a id="calendarFile" download="wedding.ics">
-            일정 파일 받기
-          </a>
-        </div>
       </section>
     </main>
 
