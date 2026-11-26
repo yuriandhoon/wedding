@@ -7,17 +7,18 @@
 <html lang="ko">
   <head>
     <meta charset="utf-8">
+    <base href="{{ '/' | relative_url }}">
+    
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#fcf4f6">
     <meta name="description" content="우리 결혼합니다!">
-    <title>최지훈 & 정유리 결혼합니다</title>
+    <title>{{ first.name | escape }} ♥ {{ second.name | escape }} 결혼합니다</title>
 
     <!-- 미리보기 태그 추가 -->
-    <meta property="og:title" content="최지훈 ❤️ 정유리 결혼합니다">
-    <meta property="og:description" content="2027년 4월 18일 일요일 오후 3시 서울대학교 호암교수회관">
-    <meta property="og:image" content="Images/Main.jpg">
-    <meta property="og:type" content="website">
-    
+    <meta property="og:title" content="{{ first.name | escape }} ❤️ {{ second.name | escape }} 결혼합니다">
+    <meta property="og:image" content="{{ '/Images/Main.jpg' | absolute_url }}">
+    <meta property="og:url" content="{{ page.url | absolute_url }}">
+        
     <!-- 글꼴 불러오기 -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -54,9 +55,9 @@
         <div class="petals" id="petals" aria-hidden="true"></div>
         <p class="hero-handwriting">결혼합니다!</p>
         <h1>
-          <span data-bind="groom.name">신랑 이름</span>
+          <span>{{ first.name | escape }}</span>
           <span class="amp">&amp;</span>
-          <span data-bind="bride.name">신부 이름</span>
+          <span>{{ second.name | escape }}</span>
         </h1>
         <!-- 대표 사진이 정상적으로 불러와지면 아래 안내가 사진으로 바뀝니다. -->
         <div class="cover" id="cover">
