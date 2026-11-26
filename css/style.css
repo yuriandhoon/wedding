@@ -187,7 +187,7 @@ p {
 
 /* 06. 초대글 */
 .invitation {
-  padding: 70px 20px 70px;
+  padding: 70px 20px;
 }
 
 /* 첫 화면과 초대글 사이의 부드러운 구분선 */
@@ -219,11 +219,6 @@ p {
 .pink {
   background: var(--pale);
   padding-top: 50px;
-}
-
-.date {
-  padding-top: 50px;
-  padding-bottom: 70px;
 }
 
 .date-display {
@@ -274,7 +269,7 @@ p {
 
 /* 08. 사진 갤러리 : 큰 사진과 스크롤 썸네일 */
 .gallery {
-  padding: 80px 22px 80px;
+  padding: 80px 22px;
 }
 
 .gallery h2 {
@@ -421,7 +416,6 @@ p {
 
 .transport article:last-child {
   border-bottom: 0;
-  padding-bottom: 20;
 }
 
 .transport h3 {
