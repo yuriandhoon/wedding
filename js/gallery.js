@@ -22,9 +22,6 @@
 
   let currentPhoto = 0;
 
-  frame.replaceChildren();
-  strip.replaceChildren();
-
   // 등록한 사진이 없으면 빈 공간을 숨깁니다.
   if (!photos.length) {
     frame.hidden = true;
