@@ -2,3 +2,178 @@
 {% assign second_role = page.people_order[1] %}
 {% assign first = site.people[first_role] %}
 {% assign second = site.people[second_role] %}
+
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#fcf4f6">
+    <meta name="description" content="우리 결혼합니다!">
+    <title>최지훈 & 정유리 결혼합니다</title>
+
+    <!-- 미리보기 태그 추가 -->
+    <meta property="og:title" content="최지훈 ❤️ 정유리 결혼합니다">
+    <meta property="og:description" content="2027년 4월 18일 일요일 오후 3시 서울대학교 호암교수회관">
+    <meta property="og:image" content="Images/Main.jpg">
+    <meta property="og:type" content="website">
+    
+    <!-- 글꼴 불러오기 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Gaegu:wght@400&amp;family=Nanum+Brush+Script&amp;family=Nanum+Pen+Script&amp;display=swap">
+    <!-- 디자인 파일: 기본 화면 → 애니메이션 순서로 읽습니다. -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/effects.css">
+
+    <!--
+      기능 파일: defer는 HTML을 다 읽은 뒤 아래 순서대로 실행하라는 뜻입니다.
+      config.js(입력 정보) → main.js(공통 도구) → 각 기능 순서를 유지하세요.
+      설치나 빌드 없이, 이 폴더 그대로 GitHub Pages에서 사용할 수 있습니다.
+    -->
+    <script src="js/config.js" defer></script>
+    <script src="js/main.js" defer></script>
+    <script src="js/gallery.js" defer></script>
+    <script src="js/accounts.js" defer></script>
+    <script src="js/effects.js" defer></script>
+  </head>
+  <body>
+    <!--
+      이 파일에는 화면의 순서와 틀을 남겼습니다.
+      내용 수정은 js/config.js부터 시작하세요. 자세한 안내는 README.md에 있습니다.
+      class는 CSS 디자인 이름, id는 JavaScript가 찾을 고유한 이름입니다.
+      data-bind="groom.name"은 config.js의 groom.name 값을 넣으라는 표시입니다.
+      기능이 연결된 id와 data-bind는 이름을 바꾸지 않는 편이 좋습니다.
+    -->
+    <main>
+
+      <!-- 01. 첫 화면: 대표 사진·이름·예식 일시. 사진 경로와 이름은 config.js에서 수정 -->
+      <section class="hero">
+        <!-- 꽃잎은 이 첫 구역 안에만 생성됩니다. -->
+        <div class="petals" id="petals" aria-hidden="true"></div>
+        <p class="hero-handwriting">결혼합니다!</p>
+        <h1>
+          <span data-bind="groom.name">신랑 이름</span>
+          <span class="amp">&amp;</span>
+          <span data-bind="bride.name">신부 이름</span>
+        </h1>
+        <!-- 대표 사진이 정상적으로 불러와지면 아래 안내가 사진으로 바뀝니다. -->
+        <div class="cover" id="cover">
+          <div class="photo-empty">
+            <span class="frame-label">OUR BEGINNING</span>
+            <span class="flower" aria-hidden="true">❀</span>
+            두 사람의 사진이<br>들어갈 자리
+          </div>
+        </div>
+        <p class="caption">2027년 4월 18일 일요일 오후 3시</p>
+        <p class="caption">서울대학교 호암교수회관(삼성컨벤션센터)</p>
+      </section>
+
+      <!-- 02. 초대글 : 본문은 config.js의 invitation에 적습니다. -->
+      <section class="invitation">
+        <p class="eyebrow">INVITATION</p>
+        <img class="invitation-art" src="Images/Invitation.jpg" alt="초대글" aria-describedby="invitationText">
+        <p id="invitationText" class="visually-hidden"></p>
+      </section>
+
+      <!-- 04. 사진 갤러리 : gallery.js가 config.js의 photos 목록으로 사진 버튼을 만듭니다. -->
+      <section class="gallery">
+        <p class="eyebrow">GALLERY</p>
+        <h2>우리의 이야기</h2>
+        <!-- 큰 사진들을 가로로 배치할 공간입니다.
+             사진은 gallery.js가 config.js의 photos를 읽어서 넣습니다. -->
+        <div
+          class="gallery-frame"
+          id="galleryFrame"
+          role="region"
+          aria-label="웨딩 사진"
+          tabindex="0"
+        ></div>
+        <!-- 가로로 스크롤하는 작은 사진 목록 -->
+        <div class="gallery-grid" id="gallery" aria-label="웨딩 사진 목록"></div>
+      </section>
+
+      <!-- 05. 오시는 길 : 예식장·교통 안내는 config.js의 venue에서 수정합니다. -->
+      <section class="location pink">
+        <p class="eyebrow">LOCATION</p>
+        <h2>오시는 길</h2>
+        <p class="venue" data-bind="venue.address"></p>
+        <p class="venue" data-bind="venue.name"></p>
+        <p class="small" data-bind="venue.caution"></p>
+        <img class="map-illustration" src="Images/Map.jpg" alt="호암교수회관 지도">
+        <div class="maplinks" id="mapLinks" hidden></div>
+        <div class="transport">
+          <article>
+            <h3>대중교통</h3>
+            <p data-bind="venue.transport"></p>
+          </article>
+          <article>
+            <h3>주차 안내</h3>
+            <p data-bind="venue.parking"></p>
+          </article>
+        </div>
+      </section>
+
+      <!-- 06. 마음 전하실 곳 -->
+      <section class="account pink">
+        <p class="eyebrow">ACCOUNT</p>
+        <h2>마음 전하실 곳</h2>
+        <p class="intro">
+          함께해 주시는 따뜻한 마음에 감사드립니다.<br>전해 주신 축복을 소중히 간직하겠습니다.
+        </p>
+      
+        <details class="account-group">
+          <summary>신랑측</summary>
+          <div class="account-list" id="groomAccounts"></div>
+        </details>
+      
+        <details class="account-group">
+          <summary>신부측</summary>
+          <div class="account-list" id="brideAccounts"></div>
+        </details>
+      </section>
+
+      <!-- 03. 예식 날짜 : 숫자는 main.js가 자동으로 채웁니다. -->
+      <section class="date pink">
+        <div class="date-display">
+          <span id="year">YEAR</span>
+          <strong id="monthDay">00.00</strong>
+          <span id="clock">TIME</span>
+        </div>
+        <p class="date-sub" id="dateSub">우리의 시작까지</p>
+        <div class="countdown" aria-label="예식까지 남은 시간">
+          <div class="time">
+            <b id="days">—</b><small>DAYS</small>
+          </div>
+          <div class="time">
+            <b id="hours">—</b><small>HOURS</small>
+          </div>
+          <div class="time">
+            <b id="minutes">—</b><small>MINUTES</small>
+          </div>
+          <div class="time">
+            <b id="seconds">—</b><small>SECONDS</small>
+          </div>
+        </div>
+      </section>
+      
+      <!-- 07. 감사 인사 : 아래 인사말은 HTML에서 직접 바꾸세요. 공유 버튼은 main.js와 연결됩니다. -->
+      <section class="closing">
+        <p class="eyebrow">THANK YOU</p>
+        <h2>우리의 시작을 함께해 주세요</h2>
+        <p>
+          귀한 걸음으로 축복해 주시는 마음,<br>오래도록 기억하며 행복하게 살겠습니다.
+        </p>
+          <div class="closing-actions">
+            <!-- 일정 파일을 휴대전화에서 열도록 연결합니다. -->
+            <a href="./wedding.ics" class="outline" id="addCalendar" type="text/calendar">일정 추가하기</a>
+            <button class="outline" id="share" type="button">청첩장 공유하기</button>
+          </div>
+      </section>
+    </main>
+
+    <!-- 복사 등의 결과를 잠깐 보여 주는 공통 안내 메시지입니다. -->
+    <div class="toast" id="toast" role="status" hidden></div>
+  </body>
+</html>
