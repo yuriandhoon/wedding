@@ -25,7 +25,6 @@ const Wedding = (() => {
   }
 
   $('invitationText').textContent = CONFIG.invitation;
-  document.title = `${CONFIG.groom.name} ♥ ${CONFIG.bride.name} 결혼합니다`;
 
   // 갤러리에서 재사용하는 사진 생성 도구입니다.
   // lazy는 화면 가까이에 온 사진부터 불러와 초기 부담을 줄입니다.
