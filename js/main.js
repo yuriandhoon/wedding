@@ -169,5 +169,5 @@ const Wedding = (() => {
 
   // 다른 파일에 필요한 도구만 Wedding라는 이름으로 전달합니다.
   // 내부의 날짜 계산이나 팝업 상태는 이 함수 안에서만 사용합니다.
-  return { $, createPhoto, notify, copy };
+  return { $, createPhoto, copy };
 })();
