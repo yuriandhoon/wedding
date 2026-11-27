@@ -332,7 +332,7 @@ p {
 }
 
 .maplinks a {
-  font-size: 12px;   background: #fff;
+  font-size: 13px;   background: #fff;
   border: 1px solid var(--line);
   padding: 10px 2px; border-radius: 3px;
 }
@@ -358,7 +358,7 @@ p {
 }
 
 .transport h3 {
-  font-family: inherit;  font-size: 17px;  font-weight: 600;
+  font-family: inherit;  font-size: 16px;  font-weight: 500;
   color: #493b38;        margin: 0 0 8px;
 }
 
