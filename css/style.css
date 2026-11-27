@@ -494,7 +494,7 @@ p {
 .closing .paper-download {
   display: inline-block;
   margin-top: 24px;   padding: 6px 8px;
-  color: inherit;     font-size: 14px;
+  color: inherit;     font-size: 15px;
   text-decoration: underline;
   text-underline-offset: 4px;
 }
