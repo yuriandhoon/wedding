@@ -61,14 +61,7 @@ section {
 }
 
 /* 04. 여러 구역에서 함께 쓰는 제목과 글자 : eyebrow는 WEDDING INVITATION처럼 작은 영문 제목에 쓰입니다. */
-.eyebrow {
-  font: 13px Georgia,serif;
-  letter-spacing: 1.2px;
-  color: var(--muted);
-  margin: 0 0 22px;
-}
-
-.serif,h1,h2,h3 {
+.h1,h2,h3 {
   font-weight: 400;  font-family: var(--serif);
 }
 
@@ -317,10 +310,6 @@ p {
   margin-bottom: 0;
 }
 
-.venue.transport {
-  font-size: 15px;
-}
-
 .location [data-bind="venue.name"] {
   margin-bottom: 5px;
 }
@@ -490,15 +479,10 @@ p {
 }
 
 /* 12. 마지막 감사 인사와 공유 버튼 */
-
 .closing {
   padding: 65px 28px;
   background: #f3dce4;
   color: #49363d;
-}
-
-.closing .eyebrow {
-  color: inherit;
 }
 
 .closing h2 {
