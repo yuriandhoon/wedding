@@ -26,7 +26,6 @@ const CONFIG = {
 
   "venue": {
     "name": "서울대학교 호암교수회관(삼성컨벤션센터)",
-    "address":"서울시 관악구 관악로 1",
     "caution": "※ '호암교수회관'은 '교수회관'과 다른 건물입니다.",
     "search": "서울대학교 삼성컨벤션센터",  
     "naverMapUrl": "https://naver.me/5Z1oCVqR",
