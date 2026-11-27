@@ -313,6 +313,10 @@ p {
   margin-bottom: 0;
 }
 
+.venue.transport {
+  font-size: 15px;
+}
+
 .location [data-bind="venue.name"] {
   margin-bottom: 5px;
 }
