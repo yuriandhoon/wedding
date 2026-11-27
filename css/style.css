@@ -49,7 +49,7 @@ button:focus-visible,a:focus-visible {
  * section의 padding은 구역 안쪽의 위아래 / 좌우 여백입니다. */
 main {
   width: 100%;        max-width: 440px;
-  padding-top: 40px;  margin: auto;
+  padding-top: 30px;  margin: auto;
   background: #fff;   overflow: hidden;
   box-shadow: 0 0 80px #99847a0a;
 }
@@ -85,7 +85,7 @@ p {
  * 사진의 모서리 모양은 .cover의 border-radius에서 바꿀 수 있습니다.
  * 벚꽃의 위치와 움직임은 effects.css에서 관리합니다. */
 .hero {
-  padding: 44px 22px 50px;
+  padding: 36px 22px 50px;
 }
 
 /* 첫 화면의 '결혼합니다!'에만 적용합니다. */
@@ -102,6 +102,11 @@ p {
   gap: 12px;         margin: 20px 0 30px;            
   justify-content: center;
   align-items: center;
+}
+
+.hero .caption { 
+  margin: 0; line-height: 1.65;
+  word-break: keep-all;
 }
 
 /* 각 이름이 중간에서 줄바꿈되지 않도록 합니다. */
@@ -222,14 +227,13 @@ p {
 }
 
 .time small {
-  color: var(--muted);   font: 11px Georgia,serif;
-  letter-spacing: 0.5px;
-  
+  font-family: inherit;  font-size: 13px;
+  color: #776a67;        letter-spacing: 0; 
 }
 
 /* 08. 사진 갤러리 : 큰 사진과 스크롤 썸네일 */
 .gallery {
-  padding: 42px 22px 80px;
+  padding: 50px 22px 50px;
 }
 
 .gallery h2 {
@@ -375,6 +379,7 @@ p {
 /* 11. 마음 전하실 곳: 계좌 목록 */
 .account {
   padding-top: 64px;   background: #fff;
+  padding-bottom: 48px;
 }
 
 .account h2 {
@@ -382,8 +387,8 @@ p {
 }
 
 .account .intro {
-  font-size: 12px;      line-height: 2;
-  color: var(--muted);  padding-bottom: 15px;
+  font-size: 14px; line-height: 1.8;
+  color: #776a67;
 }
 
 /* 신랑측·신부측 접이식 계좌 목록 */
@@ -423,6 +428,8 @@ p {
 .account-group.is-expanded summary::after {
   transform: translateY(-50%) rotate(225deg);
 }
+
+.account-group:last-child { margin-bottom: 0; }
 
 /* 화살표도 열고 닫는 방향으로 부드럽게 회전합니다. */
 @media (prefers-reduced-motion: no-preference) {
