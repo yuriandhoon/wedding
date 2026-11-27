@@ -532,23 +532,17 @@ p {
 }
 
 .closing-actions {
-  display: grid;
+  display: grid;    gap: 10px;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 10px;
   margin-top: 26px;
 }
 
 .closing-actions .outline {
-  margin: 0;
-  padding: 10px 6px;
-  border-color: #92717d;
-  background: #fff9fb;
-  border-radius: 30px;
-  color: inherit;
-  white-space: nowrap;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  margin: 0;              padding: 10px 6px;
+  border-color: #92717d;  background: #fff9fb;
+  border-radius: 30px;    color: inherit;
+  white-space: nowrap;    display: flex;
+  align-items: center;    justify-content: center;
   font: inherit;
 }
 
