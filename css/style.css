@@ -118,25 +118,21 @@ p {
 .cover {
   aspect-ratio: 4/5;
   border-radius: 120px 120px 10px 10px;
-  overflow: hidden;     position: relative;
-  background: #f6eee9;  margin-bottom: 30px;
-  display: flex;        align-items: center;
+  overflow: hidden;      position: relative;
+  background: #f6eee9;   margin-bottom: 30px;
+  display: flex;         align-items: center;
   justify-content: center;
 }
 
 .cover img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  width: 100%;   height: 100%;
+  inset: 0;      object-fit: cover;
   position: absolute;
-  inset: 0;
 }
 
 .photo-empty {
-  color: #a48b80;
-  line-height: 2.3;
-  font-family: var(--serif);
-  font-size: 16px;
+  color: #a48b80;    line-height: 2.3;
+  font-size: 16px;   font-family: var(--serif);
 }
 
 .photo-empty .frame-label {
@@ -147,10 +143,8 @@ p {
 }
 
 .flower {
-  display: block;
-  font: 48px Georgia,serif;
-  color: #cfa89f;
-  margin-bottom: 20px;
+  display: block;   font: 48px Georgia,serif;
+  color: #cfa89f;   margin-bottom: 20px;
 }
 
 .caption {
@@ -176,8 +170,9 @@ p {
 
 /* 첫 화면과 초대글 사이의 부드러운 구분선 */
 .invitation::before {
-  content: ""; position: absolute;
-  top: 0; left: 50%; width: 75%; height: 1px;
+  content: "";    position: absolute;
+  top: 0;         left: 50%; 
+  width: 75%;     height: 1px;
   transform: translateX(-50%);
   background: linear-gradient(to right, transparent, var(--line), transparent);
 }
@@ -189,10 +184,10 @@ p {
 
 /* 화면에는 숨기되 화면 읽기 도구에는 초대글을 전달 */
 .visually-hidden {
-  position: absolute; width: 1px; height: 1px; padding: 0;
-  margin: -1px; overflow: hidden;
+  position: absolute;  border: 0;
+  width: 1px;          height: 1px;
+  padding: 0;          margin: -1px; overflow: hidden;
   clip-path: inset(50%); white-space: nowrap;
-  border: 0;
 }
 
 /* 07. 연분홍 배경과 예식 날짜
@@ -204,12 +199,10 @@ p {
 }
 
 .date-display {
-  color: var(--pink);
-  font-family: Georgia,serif;
-  display: flex;
+  display: flex;  color: var(--pink);  
+  gap: 12px;      font-family: Georgia,serif;
   align-items: baseline;
   justify-content: center;
-  gap: 12px;
 }
 
 .date-display strong {
@@ -221,8 +214,7 @@ p {
 }
 
 .date-sub {
-  font-size: 14px;
-  color: #b78d99;
+  font-size: 14px;   color: #b78d99;
   margin: 10px 0 30px;
 }
 
@@ -243,9 +235,9 @@ p {
 }
 
 .time small {
-  font: 11px Georgia,serif;
+  color: var(--muted);   font: 11px Georgia,serif;
   letter-spacing: 0.5px;
-  color: var(--muted);
+  
 }
 
 /* 08. 사진 갤러리 : 큰 사진과 스크롤 썸네일 */
@@ -295,7 +287,7 @@ p {
 .gallery-grid {
   display: flex;     gap: 8px;
   overflow-x: auto;  padding: 4px 2px 12px;
-  scroll-snap-type: x mandatory;
+  scroll-snap-type:  x mandatory;
   -webkit-overflow-scrolling: touch;
 }
 
@@ -359,8 +351,7 @@ p {
 }
 
 .location {
-  padding-top: 60px;
-  padding-bottom: 40px;
+  padding-top: 60px;  padding-bottom: 40px;
 }
 
 /* 대중교통과 주차 안내는 왼쪽 정렬로 읽기 쉽게 표시합니다. */
