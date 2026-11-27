@@ -41,13 +41,13 @@ const CONFIG = {
   "accounts": {
     "groom": [
       {"role": "신랑", "holder": "최지훈", "bank": "신한은행", "number": "110-406-931510"},
-      {"role": "신랑 아버지", "holder": "최진오", "bank": "", "number": ""},
-      {"role": "신랑 어머니", "holder": "배순득", "bank": "", "number": ""}
+      {"role": "신랑 아버지", "holder": "최진오", "bank": "우리은행", "number": "051-432907-12-001"},
+      {"role": "신랑 어머니", "holder": "배순득", "bank": "하나은행", "number": "442-910004-93508"}
     ],
     "bride": [
-      {"role": "신부", "holder": "정유리", "bank": "나무", "number": "test"},
-      {"role": "신부 아버지", "holder": "정영균", "bank": "", "number": ""},
-      {"role": "신부 어머니", "holder": "김명숙", "bank": "", "number": ""}
+      {"role": "신부", "holder": "정유리", "bank": "신한은행", "number": "110-440-730460"},
+      {"role": "신부 아버지", "holder": "정영균", "bank": "국민은행", "number": "034-24-0263-413"},
+      {"role": "신부 어머니", "holder": "김명숙", "bank": "국민은행", "number": "034-24-0263-421"}
     ]
   }  // 마음 전하실 곳
 };  
