@@ -97,15 +97,11 @@
             <h3>대중교통</h3>
             <p data-bind="venue.transport"></p>
           </article>
-          <article>
+          <article class="parking-guide">
             <h3>주차 및 편의시설</h3>
-            <ol class="parking-list">
-              <li>
-                <p data-bind="venue.parking.lot"></p>
-                <p class="parking-note"><span>※</span><span data-bind="venue.parking.note"></span></p>
-              </li>
-              <li><p data-bind="venue.parking.access"></p></li>
-            </ol>
+            <p>1. <span data-bind="venue.parking.lot"></span></p>
+            <p class="parking-wrap"><span>※</span><span data-bind="venue.parking.note"></span></p>
+            <p class="parking-wrap"><span>2.</span><span data-bind="venue.parking.access"></span></p>
           </article>
         </div>
       </section>
