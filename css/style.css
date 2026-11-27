@@ -90,6 +90,8 @@ p {
 
 .hero h1 {
   /* 이름과 &를 한 줄에 나란히 배치합니다. */
+  font-family: var(--serif);
+  font-weight: 400;
   display: flex;     font-size: 34px;
   line-height: 1.55; letter-spacing: 1px;
   gap: 12px;         margin: 20px 0 30px;            
