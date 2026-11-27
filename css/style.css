@@ -473,7 +473,7 @@ p {
 }
 
 .account-info .account-number {
-  color: var(--muted);
+  color: var(--ink);
   margin: 2px 0;   font-size: 14px;
   font-weight: 300; overflow-wrap: anywhere;
 }
