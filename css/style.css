@@ -4,12 +4,9 @@
 
 /* 01. 공통 색상과 글꼴 : 전체 분위기를 바꾸려면 이 색상부터 수정하세요. var(--pink)는 아래 --pink 값을 사용합니다.*/
 :root {
-  --ink: #625653;
-  --muted: #9f8b88;
-  --pink: #dc97aa;
-  --pale: #fcf3f6;
-  --line: #eadbdd;
-  --serif: 'Noto Serif KR', 'Batang', serif;
+  --ink: #625653;  --muted: #9f8b88;
+  --pink: #dc97aa; --pale: #fcf3f6;
+  --line: #eadbdd; --serif: 'Noto Serif KR', 'Batang', serif;
 }
 
 /* 02. 기본 설정 : box-sizing은 테두리와 여백을 포함하여 너비를 계산하도록 합니다. */
