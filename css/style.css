@@ -479,7 +479,7 @@ p {
 }
 
 .account-info .account-holder {
-  color: var(--muted);
+  color: var(--ink);
   font-size: 13px;
 }
 
