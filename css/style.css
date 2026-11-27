@@ -318,7 +318,7 @@ p {
   margin-bottom: 0;
 }
 
-.venue h3 {
+.venue.caution h3 {
   font-size: 14px;  font-weight: 300;
   color: #554946;   margin: 0;
 }
