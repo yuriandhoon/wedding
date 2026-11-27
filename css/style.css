@@ -164,6 +164,11 @@ p {
   padding-bottom: 32px;
 }
 
+.invitation-art {
+  display: block;   width: 100%;
+  height: auto;     border-radius: 6px;
+}
+
 /* 화면에는 숨기되 화면 읽기 도구에는 초대글을 전달 */
 .visually-hidden {
   position: absolute;  border: 0;
