@@ -187,7 +187,12 @@ p {
 
 /* 06. 초대글 */
 .invitation {
-  padding: 70px 20px;
+  background: var(--pale);
+  isolation: isolate;
+}
+
+.invitation-art {
+  mix-blend-mode: multiply;
 }
 
 /* 첫 화면과 초대글 사이의 부드러운 구분선 */
