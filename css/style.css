@@ -382,7 +382,6 @@ p {
 }
 
 /* 11. 마음 전하실 곳: 계좌 목록 */
-
 .account {
   padding-top: 64px;   background: #fff;
 }
@@ -497,11 +496,6 @@ p {
 
 .closing h2 {
   margin: 0 0 24px;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 25px;
-  font-weight: 600;
-  line-height: 1.2;
-  letter-spacing: 0.1em;
 }
 
 .closing .paper-download {
