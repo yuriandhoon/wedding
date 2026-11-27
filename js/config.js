@@ -8,7 +8,7 @@ const CONFIG = {
   "groom": {"name": "최지훈"},
   "bride": {"name": "정유리"},
   "dateISO": "2027-04-18T15:00:00+09:00", // 예식 날짜와 시간
-  "coverPhoto": "Images/Main.jpg", // 대표 사진
+  "coverPhoto": "Files/Main_Picture.jpg", // 대표 사진
   "invitation": `결혼합니다.
 
 최진오·배순득의 아들 최지훈, 정영균·김명숙의 딸 정유리
@@ -22,7 +22,7 @@ const CONFIG = {
 저희가 첫걸음을 내딛는 기쁜 날,
 소중한 분들을 초대합니다.`,   // 초대글
 
-  "photos": ["Images/02.jpg", "Images/03.jpg", "Images/04.jpg"], // 갤러리 사진
+  "photos": ["Files/Gallery_01.jpg", "Files/Gallery_02.jpg", "Files/Gallery_03.jpg"], // 갤러리 사진
 
   "venue": {
     "name": "서울대학교 호암교수회관(삼성컨벤션센터)",
