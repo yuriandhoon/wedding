@@ -513,18 +513,15 @@ p {
 
 .closing .paper-download {
   display: inline-block;
-  margin-top: 12px;
-  padding: 6px 8px;
-  color: inherit;
-  font-size: 14px;
+  margin-top: 24px;   padding: 6px 8px;
+  color: inherit;     font-size: 14px;
   text-decoration: underline;
   text-underline-offset: 4px;
 }
 
 .closing p {
   font-family: var(--serif);
-  font-size: 14px;
-  line-height: 2.2;
+  font-size: 14px;   line-height: 2.2;
 }
 
 .closing p:not(.eyebrow) {
