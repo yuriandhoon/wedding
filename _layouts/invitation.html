@@ -99,7 +99,13 @@
           </article>
           <article>
             <h3>주차 및 편의시설</h3>
-            <p data-bind="venue.parking"></p>
+            <ol class="parking-list">
+              <li>
+                <p data-bind="venue.parking.lot"></p>
+                <p class="parking-note"><span>※</span><span data-bind="venue.parking.note"></span></p>
+              </li>
+              <li><p data-bind="venue.parking.access"></p></li>
+            </ol>
           </article>
         </div>
       </section>
