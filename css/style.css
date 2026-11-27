@@ -362,12 +362,12 @@ p {
 }
 
 .transport h3 {
-  font-family: inherit;  font-size: 16px;  font-weight: 500;
+  font-family: inherit;  font-size: 16px;  font-weight: 400;
   color: #493b38;        margin: 0 0 8px;
 }
 
 .transport p {
-  font-size: 15px;  line-height: 1.8;
+  font-size: 15px;  line-height: 1.8; font-weight: 300;
   color: #554946;   margin: 0;
   white-space: pre-line;  word-break: keep-all;
 }
