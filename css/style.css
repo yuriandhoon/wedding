@@ -376,18 +376,12 @@ p {
   white-space: pre-line;  word-break: keep-all;
 }
 
-.parking-list {
-  margin: 0; padding-left: 1.5em; 
+.parking-guide .parking-wrap {
+  display: grid; grid-template-columns: max-content minmax(0, 1fr); column-gap: .3em;
 }
 
-.parking-list li + li { 
-  margin-top: 12px;
-}
+.parking-guide .parking-wrap:last-child { margin-top: 12px; }
 
-.transport .parking-note {
-  display: grid; grid-template-columns: auto 1fr; gap: .35em;
-  margin-top: 4px;
-}
 /* 11. 마음 전하실 곳: 계좌 목록 */
 .account {
   padding-top: 64px;   background: #fff;
