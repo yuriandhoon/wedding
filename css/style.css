@@ -497,13 +497,9 @@ p {
   text-underline-offset: 4px;
 }
 
-.closing p {
-  font-family: var(--serif);
-  font-size: 14px;   line-height: 2.2;
-}
-
-.closing p:not(.eyebrow) {
-  font-size: 15px;
+.closing p { 
+  font-family: var(--serif); 
+  font-size: 15px; line-height: 2.2; 
 }
 
 .closing-actions {
