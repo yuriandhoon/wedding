@@ -102,6 +102,7 @@ p {
 .hero .caption { 
   margin: 0; line-height: 1.9;
   word-break: keep-all;
+  font-weight: 500;
 }
 
 /* 각 이름이 중간에서 줄바꿈되지 않도록 합니다. */
