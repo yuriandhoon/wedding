@@ -552,8 +552,8 @@ p {
 
 .closing {
   padding: 65px 28px;
-  background: #e7a9ba;
-  color: #663b48;
+  background: #f3dce4;
+  color: #49363d;
 }
 
 .closing .eyebrow {
@@ -571,6 +571,10 @@ p {
   line-height: 2.2;
 }
 
+.closing p:not(.eyebrow) {
+  font-size: 15px;
+}
+
 .closing-actions {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -581,7 +585,8 @@ p {
 .closing-actions .outline {
   margin: 0;
   padding: 10px 6px;
-  border-color: #663b48;
+  border-color: #92717d;
+  background: #fff9fb;
   border-radius: 30px;
   color: inherit;
   white-space: nowrap;
