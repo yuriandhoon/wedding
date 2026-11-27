@@ -68,7 +68,7 @@ section {
 .h2 {
   font-size: 21px;   margin: 0 0 30px;
   letter-spacing: 1px;
-  font-weight: 500;  font-family: var(--serif);
+  font-weight: 400;  font-family: var(--serif);
 }
 
 .h3 {
