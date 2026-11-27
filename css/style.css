@@ -164,24 +164,6 @@ p {
   padding-bottom: 32px;
 }
 
-.invitation-art {
-  mix-blend-mode: multiply;
-}
-
-/* 첫 화면과 초대글 사이의 부드러운 구분선 */
-.invitation::before {
-  content: "";    position: absolute;
-  top: 0;         left: 50%; 
-  width: 75%;     height: 1px;
-  transform: translateX(-50%);
-  background: linear-gradient(to right, transparent, var(--line), transparent);
-}
-
-.invitation-art {
-  display: block;   width: 100%;
-  height: auto;     border-radius: 6px;
-}
-
 /* 화면에는 숨기되 화면 읽기 도구에는 초대글을 전달 */
 .visually-hidden {
   position: absolute;  border: 0;
