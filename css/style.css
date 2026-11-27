@@ -318,11 +318,6 @@ p {
   margin-bottom: 0;
 }
 
-.venue.caution h3 {
-  font-size: 14px;  font-weight: 300;
-  color: #554946;   margin: 0;
-}
-
 .location [data-bind="venue.name"] {
   margin-bottom: 5px;
 }
