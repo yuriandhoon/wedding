@@ -72,19 +72,6 @@ const Wedding = (() => {
 
   if (wedding && !Number.isNaN(wedding.getTime())) {
     // 방문자가 해외에 있어도 화면에는 한국 시간 기준 예식 일시를 표시합니다.
-    const formatter = new Intl.DateTimeFormat('en-US', {
-      timeZone: 'Asia/Seoul',
-      year: 'numeric', month: '2-digit', day: '2-digit',
-      hour: 'numeric', minute: '2-digit', hour12: true
-    });
-    const parts = Object.fromEntries(
-      formatter.formatToParts(wedding).map((part) => [part.type, part.value])
-    );
-
-    $('year').textContent = parts.year;
-    $('monthDay').textContent = `${parts.month}.${parts.day}`;
-    $('clock').textContent = `${parts.hour}시`
-    
     // 남은 시간을 초로 계산한 뒤 일/시/분/초로 나눕니다.
     // 하루는 86,400초, 한 시간은 3,600초입니다. 과거 날짜는 0에서 멈춥니다.
     function tick() {
