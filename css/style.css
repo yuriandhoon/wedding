@@ -61,17 +61,17 @@ section {
 }
 
 /* 04. 여러 구역에서 함께 쓰는 제목과 글자 : eyebrow는 WEDDING INVITATION처럼 작은 영문 제목에 쓰입니다. */
-.h1 {
+h1 {
   font-weight: 500;  font-family: var(--serif);
 }
 
-.h2 {
+h2 {
   font-size: 21px;   margin: 0 0 30px;
   letter-spacing: 1px;
   font-weight: 400;  font-family: var(--serif);
 }
 
-.h3 {
+h3 {
   font-weight: 400;  font-family: var(--serif);
 }
 
