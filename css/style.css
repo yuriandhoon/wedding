@@ -413,6 +413,8 @@ p {
   text-align: left;
 }
 
+.account-group + .account-group { margin-top: 28px; }
+
 .account-group summary {
   padding: 12px 16px; padding-right: 44px;
   list-style: none;   cursor: pointer;
