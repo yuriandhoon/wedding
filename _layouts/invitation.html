@@ -155,16 +155,21 @@
       
       <!-- 07. 감사 인사 : 아래 인사말은 HTML에서 직접 바꾸세요. 공유 버튼은 main.js와 연결됩니다. -->
       <section class="closing">
-        <p class="eyebrow">THANK YOU</p>
-        <h2>우리의 시작을 함께해 주세요</h2>
+        <h2 lang="en">THANK YOU</h2>
+      
         <p>
-          귀한 걸음으로 축복해 주시는 마음,<br>오래도록 기억하며 행복하게 살겠습니다.
+          귀한 걸음으로 축복해 주시는 마음,<br>
+          오래도록 기억하며 행복하게 살겠습니다.
         </p>
-          <div class="closing-actions">
-            <!-- 일정 파일을 휴대전화에서 열도록 연결합니다. -->
-            <a href="./wedding.ics" class="outline" id="addCalendar" type="text/calendar">일정 추가하기</a>
-            <button class="outline" id="share" type="button">청첩장 공유하기</button>
-          </div>
+      
+        <div class="closing-actions">
+          <a href="./wedding.ics" class="outline" id="addCalendar" type="text/calendar">일정 추가하기</a>
+          <button class="outline" id="share" type="button">청첩장 공유하기</button>
+        </div>
+      
+        <a class="paper-download" href="{{ '/files/wedding-invitation.pdf' | relative_url }}" download="종이청첩장.pdf">
+          종이 청첩장 내려받기 <span aria-hidden="true">↓</span>
+        </a>
       </section>
     </main>
 
