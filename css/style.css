@@ -452,8 +452,8 @@ p {
 }
 
 .account-info .account-number {
-  margin: 2px 0; font-size: 15px;
-  overflow-wrap: anywhere;
+  margin: 2px 0;   font-size: 15px;
+  font-weight: 300; overflow-wrap: anywhere;
 }
 
 .account-info .account-holder {
