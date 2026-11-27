@@ -193,15 +193,15 @@ p {
 }
 
 .date-display strong {
-  font-size: 54px;   font-weight: 400;
+  font-size: 50px;   font-weight: 400;
 }
 
 .date-display span {
-  font-size: 15px;
+  font-size: 16px;
 }
 
 .date-sub {
-  font-size: 14px;   color: #b78d99;
+  font-size: 16px;   color: #b78d99;
   margin: 10px 0 30px;
 }
 
